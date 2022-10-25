@@ -1,13 +1,832 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@keyframes toLightFont {
+  from {
+    color: #4e3f30;
+  }
+  to {
+    color: #fefeeb;
+  }
+}
+@keyframes toDarkFont {
+  from {
+    color: #fefeeb;
+  }
+  to {
+    color: #4e3f30;
+  }
+}
+@keyframes toLightBackground {
+  from {
+    background-color: #4e3f30;
+  }
+  to {
+    background-color: #fefeeb;
+  }
+}
+@keyframes toDarkBackground {
+  from {
+    background-color: #fefeeb;
+  }
+  to {
+    background-color: #4e3f30;
+  }
+}
+@keyframes toLightFill {
+  from {
+    fill: #4e3f30;
+  }
+  to {
+    fill: #fefeeb;
+  }
+}
+@keyframes toDarkFill {
+  from {
+    fill: #fefeeb;
+  }
+  to {
+    fill: #4e3f30;
+  }
+}
+@keyframes toOpen {
+  from {
+    color: #4e3f30;
+    transform: rotate(0deg);
+  }
+  to {
+    color: #fefeeb;
+    transform: rotate(45deg);
+  }
+}
+@keyframes toClose {
+  from {
+    color: #fefeeb;
+    transform: rotate(45deg);
+  }
+  to {
+    color: #4e3f30;
+    transform: rotate(0deg);
+  }
+}
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  height: 100vh;
+  width: 100vw;
+  font-size: 62.5%;
+  overflow: scroll;
 }
+
+body {
+  margin: 0;
+  background-image: url(/src/images/landscape-background.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 1.6rem;
+}
+
+button.nav__link {
+  font-size: 2.7rem;
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+i.fab,
+i.far {
+  font-size: 3rem;
+  margin: 0 0.5rem;
+}
+
+.transition-main {
+  opacity: 1;
+  transition: 500ms;
+  transform: translateX(0);
+  transform-origin: left;
+}
+
+html.is-animating .transition-main {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+html.is-leaving .transition-main {
+  opacity: 0;
+}
+
+.main-title {
+  color: #e4e3e3;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%);
+}
+
+.darken {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: #090b0c;
+  opacity: 0.5;
+}
+
+.flex {
+  display: flex;
+}
+
+.project__link:hover {
+  text-decoration: none;
+}
+
+a.nav-link {
+  margin: 0 auto;
+  padding: auto 0px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-link::after {
+  content: "";
+  height: 1px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 0;
+  border-bottom: 1px solid #e4e3e3;
+  transition: all 0.3s;
+}
+
+.nav-link.active {
+  border-bottom: 1px solid #e4e3e3;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  display: block;
+  transform: translateY(0.6rem);
+}
+
+@media only screen and (max-width: 450px) {
+  .project__card {
+    display: block;
+    margin: 0 auto;
+  }
+  .headshot {
+    display: block;
+    margin: 0 auto;
+  }
+  .row.about__container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    text-align: center;
+  }
+  .col-sm-2.headshot {
+    height: 30rem;
+    width: 30rem;
+    margin-bottom: 2rem;
+  }
+}
+.splash-text {
+  text-align: end;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 1rem;
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 2rem;
+}
+@media (max-width: 56.25em) {
+  .about__container {
+    width: 60rem;
+    height: 80rem;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: #090b0c;
+    opacity: 0.9;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .about__container {
+    height: 65rem;
+    width: 35rem;
+  }
+}
+
+.headshot {
+  border-radius: 100%;
+  height: 20rem;
+  width: 20rem;
+  object-fit: cover;
+  margin: auto 1rem;
+}
+@media (max-width: 56.25em) {
+  .headshot {
+    transform: initial;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .headshot {
+    height: 15rem;
+    width: 15rem;
+  }
+}
+
+.about__container {
+  width: 100%;
+  height: 100%;
+  color: #4e3f30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.4rem;
+  padding: 2rem;
+}
+.about__text {
+  padding: 1rem;
+  width: 62;
+  text-align: end;
+  font-size: 1.7rem;
+  margin-top: 1rem;
+}
+@media (max-width: 56.25em) {
+  .about__text {
+    transform: initial;
+    margin-top: 0;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .about__text {
+    font-size: 1.6rem;
+  }
+}
+.about__headshot {
+  height: 20rem;
+  width: 20rem;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+@media (max-width: 56.25em) {
+  .about__headshot {
+    transform: initial;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .about__headshot {
+    height: 15rem;
+    width: 15rem;
+  }
+}
+
+.main-title h1 {
+  color: #e4e3e3;
+  font-size: 6rem;
+  font-weight: 300;
+}
+
+.main-title h2 {
+  color: #e4e3e3;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+h2.section__title {
+  font-size: 3.75rem;
+  height: 5rem;
+  text-align: center;
+  display: block;
+  margin-top: 8rem;
+  margin-bottom: 0;
+  word-wrap: break-word;
+  margin: 8rem auto 4rem;
+}
+@media (max-width: 37.5em) {
+  h2.section__title {
+    width: 80vw;
+    word-wrap: break-word;
+  }
+}
+
+.skill__section {
+  display: flex;
+  justify-content: center;
+  opacity: 0.9;
+  border-radius: 5px;
+  height: calc(100% - 15rem);
+}
+@media (max-width: 56.25em) {
+  .skill__section {
+    flex-direction: column;
+    height: 60rem;
+    width: 40rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .skill__section {
+    top: initial;
+  }
+}
+
+.skill__card {
+  display: block;
+  width: 50%;
+  height: 100 .skill__card;
+}
+@media (max-width: 56.25em) {
+  .skill__card {
+    display: initial;
+  }
+}
+
+.skill__card h3 {
+  font-size: 2.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 56.25em) {
+  ul {
+    display: block;
+  }
+}
+
+li {
+  font-size: 2rem;
+  width: 100%;
+}
+
+.skill__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.skill__list {
+  text-align: center;
+}
+.skill__list h3 {
+  font-size: 3rem;
+}
+
+.project__list {
+  position: absolute;
+  right: 1.5rem;
+  top: 4rem;
+  text-align: end;
+  height: 30rem;
+  width: 35rem;
+}
+.project__list .nav__link {
+  color: #4e3f30;
+}
+.project__list li {
+  position: relative;
+  z-index: 100;
+}
+
+.hovered-container {
+  position: absolute;
+  padding-left: 4rem;
+  display: grid;
+  grid-template-columns: auto 30rem;
+  grid-template-rows: calc(100% - 45rem) 40rem;
+  grid-template-areas: "image ..." " text .....";
+  left: -4rem;
+  width: 100vw;
+  height: 100%;
+}
+.hovered-container aside, .hovered-container section {
+  padding: 2rem 5rem;
+}
+.hovered-container aside {
+  grid-area: image;
+}
+.hovered-container section {
+  grid-area: text;
+}
+
+.summary {
+  width: 55%;
+  margin: 0 auto;
+  padding: 1rem 4rem 1rem 2rem;
+  font-size: 2rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+ul.project__text.stack {
+  padding: 1rem;
+  width: 45%;
+  line-height: 1.5;
+  text-align: end;
+}
+
+.project__title {
+  padding-top: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  height: 4rem;
+}
+.project__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: calc(100% - 28rem);
+}
+.project__card .flex {
+  padding: 1.5rem;
+  height: calc(100% - 7rem);
+  width: 100%;
+  position: relative;
+}
+.project__card .flex::before {
+  content: "";
+  position: absolute;
+  left: 45%;
+  top: 1.5rem;
+  height: calc(100% - 3rem);
+  width: 1px;
+  background-color: #4e3f30;
+}
+.project__container {
+  height: 100%;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+.project__image {
+  width: 30rem;
+  height: 19rem;
+  display: block;
+  margin: 4rem;
+}
+.project__section {
+  width: 100%;
+  display: flex;
+  margin: 3rem auto;
+}
+@media (max-width: 37.5em) {
+  .project__section {
+    display: block;
+  }
+}
+.project__section:first-child {
+  margin-top: 3rem;
+}
+
+.portfolio__main {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  left: 0;
+  justify-content: center;
+}
+.portfolio__main .right {
+  animation-name: toLightBackground;
+  animation-duration: 0.5s;
+  background-color: #fefeeb;
+}
+.portfolio__main .right header {
+  position: absolute;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.portfolio__main .right header li-icon {
+  position: relative;
+}
+.portfolio__main .right header li-icon::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  height: 3px;
+  right: 0.1rem;
+  top: 8px;
+  width: calc(40vw - 1.6rem);
+  animation-name: toDarkBackground;
+  animation-duration: 0.5s;
+}
+.portfolio__main .right h2, .portfolio__main .right h3, .portfolio__main .right li, .portfolio__main .right i, .portfolio__main .right button, .portfolio__main .right li-icon {
+  animation-name: toDarkFont;
+  animation-duration: 0.5s;
+}
+.portfolio__main .right li-icon::before {
+  animation-name: toDarkBackground;
+  animation-duration: 0.5s;
+  background-color: #4e3f30;
+}
+.portfolio__main .right svg {
+  animation-name: toDarkFill;
+  animation-duration: 0.5s;
+  fill: #4e3f30;
+}
+.portfolio__main .left {
+  animation-name: toDarkBackground;
+  animation-duration: 0.5s;
+  background-color: #4e3f30;
+}
+.portfolio__main .left h2, .portfolio__main .left h3, .portfolio__main .left li, .portfolio__main .left p, .portfolio__main .left button, .portfolio__main .left i {
+  animation-name: toLightFont;
+  animation-duration: 0.5s;
+}
+.portfolio__main .left li-icon::before {
+  animation-name: toLightBackground;
+  animation-duration: 0.5s;
+  background-color: #fefeeb;
+}
+.portfolio__main .left svg {
+  animation-name: toLightFill;
+  animation-duration: 0.5s;
+  color: #fefeeb;
+}
+.portfolio__main.menu-open .left {
+  animation-name: toLightBackground;
+  animation-duration: 0.5s;
+  background-color: #fefeeb;
+}
+.portfolio__main.menu-open .left h2, .portfolio__main.menu-open .left h3, .portfolio__main.menu-open .left li, .portfolio__main.menu-open .left i, .portfolio__main.menu-open .left p, .portfolio__main.menu-open .left button {
+  animation-name: toDarkFont;
+  animation-duration: 0.5s;
+}
+.portfolio__main.menu-open .left li-icon::before {
+  animation-name: toLightBackground;
+  animation-duration: 0.5s;
+  background-color: #fefeeb;
+}
+.portfolio__main.menu-open .left svg {
+  animation-name: toDarkFill;
+  animation-duration: 0.5s;
+  fill: #4e3f30;
+}
+.portfolio__main.menu-open .right {
+  animation-name: toDarkBackground;
+  animation-duration: 0.5s;
+  background-color: #4e3f30;
+}
+.portfolio__main.menu-open .right h2, .portfolio__main.menu-open .right li, .portfolio__main.menu-open .right i, .portfolio__main.menu-open .right button {
+  animation-name: toLightFont;
+  animation-duration: 0.5s;
+  color: #fefeeb;
+}
+.portfolio__main.menu-open .right li-icon::before {
+  animation-name: toLightBackground;
+  animation-duration: 0.5s;
+  background-color: #4e3f30;
+}
+.portfolio__main.menu-open .right svg {
+  animation-name: toLightFill;
+  animation-duration: 0.5s;
+  fill: #fefeeb;
+}
+.portfolio__main.menu-open .left {
+  width: 60%;
+  background-color: #fefeeb;
+  color: #4e3f30;
+}
+.portfolio__main.menu-open .left li {
+  color: #4e3f30;
+}
+.portfolio__main.menu-open .right {
+  width: 40%;
+  background-color: #4e3f30;
+  left: 0;
+}
+.portfolio__main.menu-open .right header {
+  position: absolute;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.portfolio__main.menu-open .right header li-icon {
+  position: relative;
+}
+.portfolio__main.menu-open .right header li-icon::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  height: 3px;
+  right: 0.1rem;
+  top: 8px;
+  width: calc(40vw - 1.6rem);
+  background-color: #fefeeb;
+}
+.portfolio__main.menu-open .right ul {
+  left: 1.5rem;
+  bottom: 1rem;
+}
+.portfolio__main.menu-open .right li .nav-link {
+  font-size: 2.7rem;
+  text-align: left;
+  color: #fefeeb;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.portfolio__main.menu-open .right h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fefeeb;
+  vertical-align: middle;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-align: end;
+  margin-right: 0.25rem;
+}
+.portfolio__main.menu-open .right h2 button {
+  background-color: transparent;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: 500;
+  position: relative;
+  top: -2px;
+  color: #4e3f30;
+}
+.portfolio__main.menu-open .right h2 button.close {
+  animation-name: toOpen;
+  animation-duration: 0.5s;
+  color: #fefeeb;
+  transform: rotate(45deg);
+}
+.portfolio__main.menu-open .right i.fab, .portfolio__main.menu-open .right i.far {
+  color: #fefeeb;
+}
+.portfolio__main .right ul {
+  position: absolute;
+}
+.portfolio__main .left, .portfolio__main .right {
+  position: relative;
+}
+.portfolio__main .left ul, .portfolio__main .right ul {
+  padding: 0;
+  margin: 0;
+}
+.portfolio__main .left ul.project__text.stack, .portfolio__main .right ul.project__text.stack {
+  padding: 1rem 2rem;
+  width: 45%;
+  font-size: 2rem;
+  line-height: 1.5;
+  text-align: end;
+}
+.portfolio__main .left ul.project__text.stack li, .portfolio__main .right ul.project__text.stack li {
+  font-size: 2rem;
+}
+.portfolio__main .left li, .portfolio__main .right li {
+  margin-bottom: 1.5rem;
+  font-size: 2.7rem;
+  font-weight: 600;
+}
+.portfolio__main .left {
+  width: 60%;
+  background-color: #4e3f30;
+  color: #fefeeb;
+}
+.portfolio__main .left li {
+  color: #fefeeb;
+}
+.portfolio__main .right {
+  width: 40%;
+  background-color: #fefeeb;
+  left: 0;
+}
+.portfolio__main .right ul {
+  left: 1.5rem;
+  bottom: 1rem;
+}
+.portfolio__main .right li button.nav-link {
+  color: #fefeeb;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.portfolio__main .right h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #4e3f30;
+  vertical-align: middle;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-align: end;
+  margin-right: 0.25rem;
+}
+.portfolio__main .right h2 button {
+  background-color: transparent;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: 500;
+  position: relative;
+  top: -2px;
+}
+.portfolio__main .right h2 button.open {
+  animation-name: toClose;
+  animation-duration: 0.5s;
+  color: #4e3f30;
+}
+.portfolio__main .right i.fab, .portfolio__main .right i.far {
+  color: #4e3f30;
+}
+
+.external__link__container {
+  height: 5rem;
+  position: absolute;
+  bottom: 0;
+  right: 1.5rem;
+  z-index: 5;
+}
+
+.external__link {
+  font-size: 3rem;
+}
+
+.nav__header {
+  width: 100vh;
+  height: 4rem;
+  position: fixed;
+  color: #e4e3e3;
+  z-index: 1;
+  -webkit-transform-origin: left top;
+  -webkit-transform: rotate(-90deg) translateX(-100%);
+}
+@media (max-width: 37.5em) {
+  .nav__header {
+    -webkit-transform-origin: initial;
+    -webkit-transform: initial;
+    height: 2.6rem;
+  }
+}
+.nav__container {
+  display: flex;
+  transform: rotate(180deg);
+  width: 60%;
+  height: 100%;
+  position: relative;
+  margin-left: -1rem;
+  right: -40%;
+}
+@media (max-width: 37.5em) {
+  .nav__container {
+    transform: initial;
+    width: 100vw;
+    right: 0;
+    background-color: #090b0c;
+    opacity: 0.5;
+    margin: 0;
+  }
+}
+.nav-link {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  padding: 0;
+}
+.nav-link:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (max-width: 37.5em) {
+  .nav-link {
+    font-size: 1.4rem;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

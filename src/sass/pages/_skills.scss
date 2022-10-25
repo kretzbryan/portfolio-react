@@ -1,0 +1,82 @@
+h2.section__title {
+	font-size: 3.75rem;
+	height: 5rem;
+	text-align: center;
+	display: block;
+	margin-top: 8rem;
+	margin-bottom: 0;
+	word-wrap: break-word;
+	margin: 8rem auto 4rem;
+
+	@include respond(phone) {
+		width: 80vw;
+		word-wrap: break-word;
+	}
+}
+
+.skill__section {
+	display: flex;
+	justify-content: center;
+	// align-items: center;
+	opacity: 0.9;
+	border-radius: 5px;
+	height: calc(100% - 15rem);
+
+	@include respond(tab-port) {
+		flex-direction: column;
+		height: 60rem;
+		width: 40rem;
+	}
+
+	@include respond(phone) {
+		top: initial;
+	}
+}
+
+.skill__card {
+	display: block;
+	width: 50%;
+	height: 100&;
+
+	@include respond(tab-port) {
+		display: initial;
+	}
+}
+
+.skill__card h3 {
+	font-size: 2.5rem;
+	width: 100%;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+	position: relative;
+	padding: 0;
+	margin: 0;
+
+	@include respond(tab-port) {
+		display: block;
+	}
+}
+
+li {
+	font-size: 2rem;
+	width: 100%;
+}
+
+.skill {
+	&__container {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__list {
+		text-align: center;
+		& h3 {
+			font-size: 3rem;
+		}
+	}
+}

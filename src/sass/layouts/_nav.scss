@@ -1,0 +1,54 @@
+.nav {
+	&__header {
+		width: 100vh;
+		height: 4rem;
+		position: fixed;
+		color: #e4e3e3;
+		z-index: 1;
+		-webkit-transform-origin: left top;
+		-webkit-transform: rotate(-90deg) translateX(-100%);
+
+		@include respond(phone) {
+			-webkit-transform-origin: initial;
+			-webkit-transform: initial;
+			height: 2.6rem;
+		}
+	}
+
+	&__container {
+		display: flex;
+		transform: rotate(180deg);
+		width: 60%;
+		height: 100%;
+		position: relative;
+		margin-left: -1rem;
+		right: -40%;
+
+		@include respond(phone) {
+			transform: initial;
+			width: 100vw;
+			right: 0;
+			background-color: #090b0c;
+			opacity: 0.5;
+			margin: 0;
+		}
+	}
+
+	&-link {
+		text-align: center;
+		width: 100%;
+		height: 100%;
+
+		text-decoration: none;
+		padding: 0;
+
+		&:hover {
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		@include respond(phone) {
+			font-size: 1.4rem;
+		}
+	}
+}

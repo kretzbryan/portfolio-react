@@ -1,0 +1,75 @@
+@keyframes toLightFont {
+	from {
+		color: $color-coffee-bean;
+	}
+	to {
+		color: $color-milk;
+	}
+}
+
+@keyframes toDarkFont {
+	from {
+		color: $color-milk;
+	}
+	to {
+		color: $color-coffee-bean;
+	}
+}
+
+@keyframes toLightBackground {
+	from {
+		background-color: $color-coffee-bean;
+	}
+	to {
+		background-color: $color-milk;
+	}
+}
+
+@keyframes toDarkBackground {
+	from {
+		background-color: $color-milk;
+	}
+	to {
+		background-color: $color-coffee-bean;
+	}
+}
+
+@keyframes toLightFill {
+	from {
+		fill: $color-coffee-bean;
+	}
+	to {
+		fill: $color-milk;
+	}
+}
+
+@keyframes toDarkFill {
+	from {
+		fill: $color-milk;
+	}
+	to {
+		fill: $color-coffee-bean;
+	}
+}
+
+@keyframes toOpen {
+	from {
+		color: $color-coffee-bean;
+		transform: rotate(0deg);
+	}
+	to {
+		color: $color-milk;
+		transform: rotate(45deg);
+	}
+}
+
+@keyframes toClose {
+	from {
+		color: $color-milk;
+		transform: rotate(45deg);
+	}
+	to {
+		color: $color-coffee-bean;
+		transform: rotate(0deg);
+	}
+}

@@ -1,0 +1,15 @@
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'abstracts/key-frames';
+
+@import 'base/base';
+
+@import 'pages/about';
+@import 'pages/index';
+@import 'pages/skills';
+@import 'pages/projects';
+
+@import './menu';
+@import 'layouts/footer';
+@import 'layouts/nav';
