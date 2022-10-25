@@ -3,7 +3,11 @@ import React from 'react';
 const Project = ({ title, image, href, description, techStack }) => {
 	return (
 		<main className='project__card'>
-			<h5 className='project__title'>{title}</h5>
+			<h5 className='project__title'>
+				<a target='_blank' href={href}>
+					{title}
+				</a>
+			</h5>
 			<div className='flex'>
 				<ul className='project__text stack'>
 					{techStack.map((item) => (

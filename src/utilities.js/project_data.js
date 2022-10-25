@@ -9,7 +9,7 @@ export const project_data = {
 		image: roveImage,
 		title: 'Travel with Rove',
 		href: 'https://www.travelwithrove.com/',
-		description: 'This is a description',
+		description: `Rove is an emerging travel startup based in Chicago. It is a solution for travelers seeking new vacation experiences without the chore of the lengthy planning that can be involved. It also serves as a tool for the administrator; the administrative application provides an administrator with an easy to use solution for curating vacations to the vision of a user's perfect vacation! I am the sole UI engineer - working closely with key stake holders - building the foundational front-end infrastructure using React and Redux. I also provided an integral role in creating the back-end infrastructure using Express and MongoDB, as well as provide support for Enterprise API integration.`,
 		techStack: [
 			'Sass',
 			'MongoDB',

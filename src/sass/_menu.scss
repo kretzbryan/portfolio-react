@@ -1,98 +1,9 @@
 .portfolio__main {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	left: 0;
-	justify-content: center;
-
-	.right {
-		animation-name: toLightBackground;
-		animation-duration: 0.5s;
-		background-color: $color-milk;
-		& header {
-			position: absolute;
-			right: 1.5rem;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-end;
-
-			& li-icon {
-				position: relative;
-				// top: -3px;
-
-				&::before {
-					content: '';
-					position: absolute;
-
-					z-index: 10;
-					height: 3px;
-					right: 0.1rem;
-					top: 8px;
-					width: calc(40vw - 1.6rem);
-					animation-name: toDarkBackground;
-					animation-duration: 0.5s;
-				}
-			}
-		}
-		& h2,
-		& h3,
-		& li,
-		& i,
-		& button,
-		& li-icon {
-			// color: $color-coffee-bean;
-			animation-name: toDarkFont;
-			animation-duration: 0.5s;
-		}
-
-		& li-icon::before {
-			animation-name: toDarkBackground;
-			animation-duration: 0.5s;
-			background-color: $color-coffee-bean;
-		}
-
-		& svg {
-			animation-name: toDarkFill;
-			animation-duration: 0.5s;
-
-			fill: $color-coffee-bean;
-		}
-	}
-
-	.left {
-		animation-name: toDarkBackground;
-		animation-duration: 0.5s;
-		background-color: $color-coffee-bean;
-		& h2,
-		& h3,
-		& li,
-		& p,
-		& button,
-		& i {
-			// color: $color-coffee-bean;
-			animation-name: toLightFont;
-			animation-duration: 0.5s;
-		}
-
-		& li-icon::before {
-			animation-name: toLightBackground;
-			animation-duration: 0.5s;
-			background-color: $color-milk;
-		}
-
-		& svg {
-			animation-name: toLightFill;
-			animation-duration: 0.5s;
-			color: $color-milk;
-		}
-	}
-
 	&.menu-open {
 		.left {
-			animation-name: toLightBackground;
-			animation-duration: 0.5s;
-			background-color: $color-milk;
+			// animation-name: toLightBackground;
+			// animation-duration: 0.5s;
+			// background-color: $color-milk;
 			& h2,
 			& h3,
 			& li,
@@ -145,210 +56,192 @@
 		}
 	}
 
-	&.menu-open {
-		& .left {
-			width: 60%;
-			background-color: $color-milk;
+	// &.menu-open {
+	// 	& .left {
+	// 		width: 60%;
+	// 		background-color: $color-milk;
 
-			color: $color-coffee-bean;
-			// & ul {
-			// 	right: 1.5rem;
-			// 	top: 3rem;
-			// }
-			& li {
-				color: $color-coffee-bean;
-			}
-		}
+	// 		color: $color-coffee-bean;
+	// 		// & ul {
+	// 		// 	right: 1.5rem;
+	// 		// 	top: 3rem;
+	// 		// }
+	// 		& li {
+	// 			color: $color-coffee-bean;
+	// 		}
+	// 	}
 
-		& .right {
-			width: 40%;
-			background-color: $color-coffee-bean;
+	// 	& .right {
+	// 		width: 40%;
+	// 		background-color: $color-coffee-bean;
 
-			left: 0;
-			// &::before {
-			// 	content: '';
-			// 	position: absolute;
-			// 	height: 3px;
-			// 	width: calc(100% - 2rem);
-			// 	background-color: $color-milk;
-			// 	top: 5rem;
-			// }
+	// 		left: 0;
+	// 		// &::before {
+	// 		// 	content: '';
+	// 		// 	position: absolute;
+	// 		// 	height: 3px;
+	// 		// 	width: calc(100% - 2rem);
+	// 		// 	background-color: $color-milk;
+	// 		// 	top: 5rem;
+	// 		// }
 
-			& header {
-				position: absolute;
-				right: 1.5rem;
-				display: flex;
-				flex-direction: column;
-				align-items: flex-end;
+	// 		& header {
+	// 			position: absolute;
+	// 			right: 1.5rem;
+	// 			display: flex;
+	// 			flex-direction: column;
+	// 			align-items: flex-end;
 
-				& li-icon {
-					position: relative;
-					// top: -3px;
+	// 			& li-icon {
+	// 				position: relative;
+	// 				// top: -3px;
 
-					&::before {
-						content: '';
-						position: absolute;
+	// 				&::before {
+	// 					content: '';
+	// 					position: absolute;
 
-						z-index: 10;
-						height: 3px;
-						right: 0.1rem;
-						top: 8px;
-						width: calc(40vw - 1.6rem);
-						background-color: $color-milk;
-					}
-				}
-			}
-			& ul {
-				left: 1.5rem;
-				bottom: 1rem;
-			}
-			& li .nav-link {
-				font-size: 2.7rem;
-				text-align: left;
-				color: $color-milk;
-				font-weight: 500;
-				letter-spacing: 1px;
-			}
+	// 					z-index: 10;
+	// 					height: 3px;
+	// 					right: 0.1rem;
+	// 					top: 8px;
+	// 					width: calc(40vw - 1.6rem);
+	// 					background-color: $color-milk;
+	// 				}
+	// 			}
+	// 		}
+	// 		& ul {
+	// 			left: 1.5rem;
+	// 			bottom: 1rem;
+	// 		}
+	// 		& li .nav-link {
+	// 			font-size: 2.7rem;
+	// 			text-align: left;
+	// 			color: $color-milk;
+	// 			font-weight: 500;
+	// 			letter-spacing: 1px;
+	// 		}
 
-			& h2 {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				color: $color-milk;
-				vertical-align: middle;
-				font-weight: 500;
-				margin-bottom: 0;
-				text-align: end;
-				margin-right: 0.25rem;
+	// 		& h2 {
+	// 			display: flex;
+	// 			align-items: center;
+	// 			justify-content: space-between;
+	// 			color: $color-milk;
+	// 			vertical-align: middle;
+	// 			font-weight: 500;
+	// 			margin-bottom: 0;
+	// 			text-align: end;
+	// 			margin-right: 0.25rem;
+	// 			font-size: 3rem;
+	// 			button {
+	// 				background-color: transparent;
+	// 				border: none;
+	// 				font-size: 3rem;
+	// 				font-weight: 500;
+	// 				position: relative;
+	// 				top: 1px;
 
-				button {
-					background-color: transparent;
-					border: none;
-					font-size: 2.5rem;
-					font-weight: 500;
-					position: relative;
-					top: -2px;
+	// 				color: $color-coffee-bean;
+	// 				&.close {
+	// 					animation-name: toLightFont;
+	// 					animation-duration: 0.5s;
+	// 					color: $color-milk;
+	// 					& span {
+	// 						animation-name: toClose;
+	// 						animation-duration: 0.5s;
 
-					color: $color-coffee-bean;
-					&.close {
-						animation-name: toOpen;
-						animation-duration: 0.5s;
-						color: $color-milk;
-						transform: rotate(45deg);
-					}
-				}
-			}
+	// 						transform: rotate(45deg);
+	// 					}
+	// 				}
+	// 			}
+	// 		}
 
-			& i.fab,
-			& i.far {
-				color: $color-milk;
-			}
-		}
-	}
+	// 		& i.fab,
+	// 		& i.far {
+	// 			color: $color-milk;
+	// 		}
+	// 	}
+	// }
 
-	& .right {
-		& ul {
-			position: absolute;
-		}
-	}
+	// & .left,
+	// & .right {
+	// 	position: relative;
+	// 	& ul {
+	// 		padding: 0;
+	// 		margin: 0;
+	// 		&.project__text.stack {
+	// 			overflow: scroll;
+	// 			padding: 1rem 2rem 3rem;
+	// 			width: 30%;
+	// 			font-size: 2rem;
+	// 			line-height: 1.5;
 
-	& .left,
-	& .right {
-		position: relative;
-		& ul {
-			padding: 0;
-			margin: 0;
-			&.project__text.stack {
-				padding: 1rem 2rem;
-				width: 45%;
-				font-size: 2rem;
-				line-height: 1.5;
+	// 			text-align: end;
 
-				text-align: end;
+	// 			& li {
+	// 				font-size: 2rem;
+	// 			}
+	// 		}
+	// 	}
+	// 	& li {
+	// 		margin-bottom: 1.5rem;
+	// 		font-size: 2.7rem;
+	// 		font-weight: 600;
+	// 	}
+	// }
 
-				& li {
-					font-size: 2rem;
-				}
-			}
-		}
-		& li {
-			margin-bottom: 1.5rem;
-			font-size: 2.7rem;
-			font-weight: 600;
-		}
-	}
+	// & .left {
+	// 	background-color: $color-coffee-bean;
 
-	& .left {
-		width: 60%;
-		background-color: $color-coffee-bean;
+	// 	color: $color-milk;
+	// 	// & ul {
+	// 	// 	right: 1.5rem;
+	// 	// 	top: 3rem;
+	// 	// }
+	// 	& li {
+	// 		color: $color-milk;
+	// 	}
+	// }
 
-		color: $color-milk;
-		// & ul {
-		// 	right: 1.5rem;
-		// 	top: 3rem;
-		// }
-		& li {
-			color: $color-milk;
-		}
-	}
+	// & .right {
+	// 	width: 40%;
+	// 	background-color: $color-milk;
 
-	& .right {
-		width: 40%;
-		background-color: $color-milk;
+	// 	left: 0;
+	// 	// &::before {
+	// 	// 	content: '';
+	// 	// 	position: absolute;
+	// 	// 	height: 3px;
+	// 	// 	width: calc(100% - 2rem);
+	// 	// 	background-color: $color-milk;
+	// 	// 	top: 5rem;
+	// 	// }
 
-		left: 0;
-		// &::before {
-		// 	content: '';
-		// 	position: absolute;
-		// 	height: 3px;
-		// 	width: calc(100% - 2rem);
-		// 	background-color: $color-milk;
-		// 	top: 5rem;
-		// }
+	// 	// & ul {
+	// 	// 	left: 1.5rem;
+	// 	// 	bottom: 1rem;
+	// 	// }
+	// 	// & li button.nav-link {
+	// 	// 	color: $color-milk;
+	// 	// 	font-weight: 500;
+	// 	// 	letter-spacing: 1px;
+	// 	// }
 
-		& ul {
-			left: 1.5rem;
-			bottom: 1rem;
-		}
-		& li button.nav-link {
-			color: $color-milk;
-			font-weight: 500;
-			letter-spacing: 1px;
-		}
-
-		& h2 {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			color: $color-coffee-bean;
-			vertical-align: middle;
-			font-weight: 500;
-			margin-bottom: 0;
-			text-align: end;
-			margin-right: 0.25rem;
-
-			button {
-				background-color: transparent;
-				border: none;
-				font-size: 2.5rem;
-				font-weight: 500;
-				position: relative;
-				top: -2px;
-
-				&.close {
-					// transform: rotate(45deg);
-				}
-
-				&.open {
-					animation-name: toClose;
-					animation-duration: 0.5s;
-					color: $color-coffee-bean;
-				}
-			}
-		}
-		& i.fab,
-		& i.far {
-			color: $color-coffee-bean;
-		}
-	}
+	// 	& h2 {
+	// 		button {
+	// 			// &.open {
+	// 			// 	animation-name: toDarkFont;
+	// 			// 	animation-duration: 0.5s;
+	// 			// 	& span {
+	// 			// 		animation-name: toClose;
+	// 			// 		animation-duration: 0.5s;
+	// 			// 	}
+	// 			// 	color: $color-coffee-bean;
+	// 			// }
+	// 		}
+	// 	}
+	// 	// & i.fab,
+	// 	// & i.far {
+	// 	// 	color: $color-coffee-bean;
+	// 	// }
+	// }
 }

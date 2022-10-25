@@ -30,6 +30,8 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 	font-size: 1.6rem;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 button.nav__link {
 	font-size: 2.7rem;
@@ -53,6 +55,13 @@ i.far {
 	font-size: 3rem;
 
 	margin: 0 0.5rem;
+}
+a,
+a:visited,
+a:focus,
+a:hover {
+	text-decoration: none;
+	color: $color-coffee-bean;
 }
 
 .transition-main {
@@ -161,4 +170,10 @@ a.nav-link {
 	top: 50%;
 	transform: translateY(-50%);
 	padding-right: 1rem;
+	padding-bottom: 0.5rem;
+	padding-left: calc(36px + 1rem);
+	font-size: 2.2rem;
+	border-bottom: 2px solid $color-milk;
+	letter-spacing: 0.75px;
+	line-height: 1.3;
 }

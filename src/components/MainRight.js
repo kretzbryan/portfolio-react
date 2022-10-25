@@ -8,11 +8,10 @@ const MainRight = ({ menuOpen, setMenuOpen, setCurrentWindow }) => {
 		<div className={`right${menuOpen ? ' menu-open' : ''}`}>
 			<header>
 				<h2>
-					bk.dev{' '}
 					<button
 						className={menuOpen ? 'close' : 'open'}
 						onClick={() => setMenuOpen(!menuOpen)}>
-						+
+						bk.dev <span>+</span>
 					</button>
 				</h2>
 				{/* <img src={menuOpen ? frameCoffee : frameMilk} alt='' />
