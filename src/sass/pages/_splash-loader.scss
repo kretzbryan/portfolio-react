@@ -1,0 +1,43 @@
+.splash-loader {
+	&__dark,
+	&__light {
+		height: 200vh;
+		width: 200vw;
+	}
+
+	&__dark {
+		position: relative;
+		right: 75%;
+		animation: fillLeftToRight 0.75s forwards;
+		animation-delay: 0.5s;
+		// animation-name: fillLeftToRight;
+		// animation-duration: 0.5s;
+		// background: linear-gradient(
+		// 	to left,
+		// 	$color-coffee-bean 100%,
+		// 	transparent 0
+		// );
+		background-color: $color-coffee-bean;
+		overflow-y: scroll;
+	}
+
+	&__light {
+		background-color: $color-milk;
+		position: relative;
+		left: 75%;
+		animation: fillRightToLeft 0.75s forwards;
+		animation-delay: 0.5s;
+	}
+
+	&__main {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		animation: rotateSkew 0.75s forwards;
+		animation-delay: 1s;
+		// transform: translate(-40%, -50%) rotate(90deg);
+		z-index: 1;
+		// transform: translateX(60vw) rotate(45deg);
+	}
+}

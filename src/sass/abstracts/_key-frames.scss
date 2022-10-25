@@ -93,7 +93,41 @@
 	}
 }
 
-@keyframes fromBottomToFrame {
+@keyframes rotateSkew {
+	from {
+		transform: translate(-50%, -50%);
+		// left: ;
+	}
+	to {
+		transform: translate(-45%, -50%) rotate(90deg);
+		// left: ;
+	}
+}
+
+@keyframes fillLeftToRight {
+	0% {
+		// position: relative;
+		right: 75%;
+	}
+
+	100% {
+		// position: relative;
+		right: 0;
+		// left: ;
+	}
+}
+@keyframes fillRightToLeft {
+	0% {
+		left: 75%;
+	}
+
+	100% {
+		left: 0;
+		// left: ;
+	}
+}
+
+@keyframes rightToLeft {
 	from {
 		left: auto;
 		bottom: -100%;

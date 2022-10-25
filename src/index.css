@@ -82,7 +82,31 @@
     }
   }
 }
-@keyframes fromBottomToFrame {
+@keyframes rotateSkew {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: translate(-45%, -50%) rotate(90deg);
+  }
+}
+@keyframes fillLeftToRight {
+  0% {
+    right: 75%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes fillRightToLeft {
+  0% {
+    left: 75%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes rightToLeft {
   from {
     left: auto;
     bottom: -100%;
@@ -114,10 +138,7 @@ html {
 
 body {
   margin: 0;
-  background-image: url(/src/images/landscape-background.jpeg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: #a5b3aa;
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -860,6 +881,7 @@ ul.project__text.stack {
 .portfolio__main .left,
 .portfolio__main .right {
   position: relative;
+  z-index: 10;
 }
 .portfolio__main .left ul.skill__list,
 .portfolio__main .right ul.skill__list {
@@ -892,6 +914,35 @@ ul.project__text.stack {
 .portfolio__main .right {
     width: 100vw;
   }
+}
+
+.splash-loader__dark, .splash-loader__light {
+  height: 200vh;
+  width: 200vw;
+}
+.splash-loader__dark {
+  position: relative;
+  right: 75%;
+  animation: fillLeftToRight 0.75s forwards;
+  animation-delay: 0.5s;
+  background-color: #4e3f30;
+  overflow-y: scroll;
+}
+.splash-loader__light {
+  background-color: #fefeeb;
+  position: relative;
+  left: 75%;
+  animation: fillRightToLeft 0.75s forwards;
+  animation-delay: 0.5s;
+}
+.splash-loader__main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotateSkew 0.75s forwards;
+  animation-delay: 1s;
+  z-index: 1;
 }
 
 .external__link__container {
