@@ -12,9 +12,9 @@
 }
 
 .portfolio__main .left {
+	background-color: $color-coffee-bean;
 	animation-name: toDarkBackground;
 	animation-duration: 0.5s;
-	background-color: $color-coffee-bean;
 	// color: $color-milk;
 	width: 60%;
 
@@ -24,9 +24,14 @@
 		height: 3px;
 		position: absolute;
 		background-color: $color-milk;
-		top: 69px;
+		top: 70px;
 		left: 0;
 		z-index: 1;
+		animation-duration: 0.3s;
+
+		@include respond(max750) {
+			animation-name: fromBottomToFrame;
+		}
 	}
 	& h2,
 	& h3,
@@ -61,7 +66,7 @@
 			position: absolute;
 			background-color: $color-milk;
 			top: 0;
-			left: 36px;
+			left: 43px;
 		}
 	}
 }
@@ -111,7 +116,6 @@
 		}
 
 		& li-icon {
-			position: relative;
 			display: block;
 			// top: -3px;
 
@@ -121,15 +125,15 @@
 
 				z-index: 10;
 				height: 3px;
+				// right: 0.1rem;
 				right: 0.1rem;
-				top: 8.3px;
-				width: calc(40vw - 1.6rem);
-				animation-name: toDarkBackground;
-				animation-duration: 0.5s;
+				top: 70px;
+				width: calc(100% - 0.1rem);
+				animation-name: toLightFont;
+				animation-duration: 0.3s;
 
 				@include respond(max750) {
 					width: calc(40vh - 1.5rem);
-					// left: ;
 				}
 			}
 			@include respond(max750) {
@@ -221,6 +225,15 @@
 
 		fill: $color-coffee-bean;
 	}
+	&::before {
+		content: '';
+		height: 60vh;
+		width: 3px;
+		position: absolute;
+		background-color: transparent;
+		top: 0;
+		left: 36px;
+	}
 
 	@include respond(max750) {
 		&::before {
@@ -308,13 +321,17 @@
 	& ul {
 		padding: 0;
 		margin: 0;
+
 		&.project__text.stack {
 			overflow: scroll;
 			padding: 1rem 2rem 3rem;
 			width: 30%;
 			font-size: 2rem;
 			line-height: 1.5;
-
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: center;
 			text-align: end;
 
 			& li {

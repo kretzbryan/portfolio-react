@@ -6,7 +6,7 @@ h2.section__title {
 	margin-top: 8rem;
 	margin-bottom: 0;
 	word-wrap: break-word;
-	margin: 8rem auto 4rem;
+	margin: 4rem auto 0;
 
 	@include respond(phone) {
 		width: 80vw;
@@ -30,8 +30,7 @@ h2.section__title {
 .skill__card {
 	display: block;
 	width: 50%;
-	height: 100&;
-
+	height: 100%;
 	@include respond(tab-port) {
 		display: initial;
 	}
@@ -65,6 +64,8 @@ li {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		overflow: scroll;
+		padding-bottom: 5rem;
 	}
 
 	&__list {

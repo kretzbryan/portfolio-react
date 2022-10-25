@@ -66,6 +66,40 @@
     transform: rotate(0deg);
   }
 }
+@keyframes fromLeftToFrame {
+  from {
+    left: -100%;
+    @media (max-width: 750px) {
+      left: auto;
+      bottom: -100%;
+    }
+  }
+  to {
+    left: 0;
+    @media (max-width: 750px) {
+      left: auto;
+      bottom: 0;
+    }
+  }
+}
+@keyframes fromBottomToFrame {
+  from {
+    left: auto;
+    bottom: -100%;
+  }
+  to {
+    left: auto;
+    bottom: 0;
+  }
+}
+@keyframes fromRightToFrame {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0.1rem;
+  }
+}
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -312,7 +346,7 @@ h2.section__title {
   margin-top: 8rem;
   margin-bottom: 0;
   word-wrap: break-word;
-  margin: 8rem auto 4rem;
+  margin: 4rem auto 0;
 }
 @media (max-width: 37.5em) {
   h2.section__title {
@@ -337,7 +371,7 @@ h2.section__title {
 .skill__card {
   display: block;
   width: 50%;
-  height: 100 .skill__card;
+  height: 100%;
 }
 @media (max-width: 56.25em) {
   .skill__card {
@@ -373,6 +407,8 @@ li {
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+  padding-bottom: 5rem;
 }
 .skill__list {
   text-align: center;
@@ -538,9 +574,9 @@ ul.project__text.stack {
 }
 
 .portfolio__main .left {
+  background-color: #4e3f30;
   animation-name: toDarkBackground;
   animation-duration: 0.5s;
-  background-color: #4e3f30;
   width: 60%;
 }
 .portfolio__main .left::before {
@@ -549,9 +585,15 @@ ul.project__text.stack {
   height: 3px;
   position: absolute;
   background-color: #fefeeb;
-  top: 69px;
+  top: 70px;
   left: 0;
   z-index: 1;
+  animation-duration: 0.3s;
+}
+@media (max-width: 750px) {
+  .portfolio__main .left::before {
+    animation-name: fromBottomToFrame;
+  }
 }
 .portfolio__main .left h2, .portfolio__main .left h3, .portfolio__main .left li, .portfolio__main .left p, .portfolio__main .left button, .portfolio__main .left i {
   color: #fefeeb;
@@ -579,7 +621,7 @@ ul.project__text.stack {
     position: absolute;
     background-color: #fefeeb;
     top: 0;
-    left: 36px;
+    left: 43px;
   }
 }
 
@@ -625,7 +667,6 @@ ul.project__text.stack {
   transform: rotate(0deg);
 }
 .portfolio__main .right header li-icon {
-  position: relative;
   display: block;
 }
 .portfolio__main .right header li-icon::before {
@@ -634,10 +675,10 @@ ul.project__text.stack {
   z-index: 10;
   height: 3px;
   right: 0.1rem;
-  top: 8.3px;
-  width: calc(40vw - 1.6rem);
-  animation-name: toDarkBackground;
-  animation-duration: 0.5s;
+  top: 70px;
+  width: calc(100% - 0.1rem);
+  animation-name: toLightFont;
+  animation-duration: 0.3s;
 }
 @media (max-width: 750px) {
   .portfolio__main .right header li-icon::before {
@@ -711,6 +752,15 @@ ul.project__text.stack {
   animation-name: toDarkFill;
   animation-duration: 0.5s;
   fill: #4e3f30;
+}
+.portfolio__main.menu-open .left::before {
+  content: "";
+  height: 60vh;
+  width: 3px;
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 36px;
 }
 @media (max-width: 750px) {
   .portfolio__main.menu-open .left::before {
@@ -795,6 +845,10 @@ ul.project__text.stack {
   width: 30%;
   font-size: 2rem;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
   text-align: end;
 }
 .portfolio__main .left ul.project__text.stack li,

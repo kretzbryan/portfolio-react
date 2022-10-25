@@ -73,3 +73,44 @@
 		transform: rotate(0deg);
 	}
 }
+
+@keyframes fromLeftToFrame {
+	from {
+		left: -100%;
+		@include respond(max750) {
+			left: auto;
+			bottom: -100%;
+			// left: ;
+		}
+	}
+	to {
+		left: 0;
+		@include respond(max750) {
+			left: auto;
+			bottom: 0;
+			// left: ;
+		}
+	}
+}
+
+@keyframes fromBottomToFrame {
+	from {
+		left: auto;
+		bottom: -100%;
+		// left: ;
+	}
+	to {
+		left: auto;
+		bottom: 0;
+		// left: ;
+	}
+}
+
+@keyframes fromRightToFrame {
+	from {
+		right: -100%;
+	}
+	to {
+		right: 0.1rem;
+	}
+}
