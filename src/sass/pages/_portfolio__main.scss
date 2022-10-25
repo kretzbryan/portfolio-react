@@ -6,6 +6,15 @@
 	left: 0;
 	justify-content: center;
 
+	&-menu {
+		padding: 0;
+		margin: 0;
+
+		& li {
+			font-size: 2.7rem;
+		}
+	}
+
 	@include respond(max750) {
 		flex-direction: column-reverse;
 	}
@@ -315,8 +324,9 @@
 .portfolio__main .right {
 	position: relative;
 	& ul {
-		padding: 0;
-		margin: 0;
+		&.skill__list {
+			padding-bottom: 2rem;
+		}
 
 		&.project__text.stack {
 			overflow: scroll;
@@ -337,7 +347,7 @@
 	}
 	& li {
 		margin-bottom: 1.5rem;
-		font-size: 2.7rem;
+
 		font-weight: 600;
 	}
 

@@ -129,6 +129,10 @@ ul.project__text.stack {
 				background-color: $color-coffee-bean;
 			}
 		}
+
+		@include respond(max750) {
+			overflow-x: scroll;
+		}
 	}
 
 	&__container {
@@ -136,6 +140,11 @@ ul.project__text.stack {
 		width: 60vw;
 		display: flex;
 		flex-direction: column;
+		overflow-x: scroll;
+
+		@include respond(max750) {
+			width: 100%;
+		}
 	}
 
 	&__image {

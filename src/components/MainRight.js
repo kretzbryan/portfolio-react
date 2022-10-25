@@ -50,7 +50,7 @@ const MainRight = ({ menuOpen, setMenuOpen, setCurrentWindow }) => {
 			</header>
 
 			{menuOpen ? (
-				<ul>
+				<ul className='porfolio__main-menu'>
 					<li>
 						<button
 							onClick={() => setCurrentWindow('about-me')}

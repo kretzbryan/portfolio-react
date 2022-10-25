@@ -3,7 +3,12 @@ import React, { Fragment } from 'react';
 const Skills = () => {
 	return (
 		<section className='skill__container'>
-			<h2 className='section__title'> Languages/Frameworks/Libraries </h2>
+			<h2 className='section__title'>
+				{' '}
+				Languages/Frameworks
+				<br />
+				/Libraries{' '}
+			</h2>
 			<section className='skill__section'>
 				<div className='skill__card'>
 					<ul className='skill__list'>

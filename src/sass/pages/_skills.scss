@@ -1,16 +1,16 @@
 h2.section__title {
 	font-size: 3.75rem;
-	height: 5rem;
 	text-align: center;
 	display: block;
 	margin-top: 8rem;
 	margin-bottom: 0;
 	word-wrap: break-word;
 	margin: 4rem auto 0;
+	padding-top: 1rem;
 
-	@include respond(phone) {
-		width: 80vw;
-		word-wrap: break-word;
+	@include respond(max540) {
+		margin-top: 2rem;
+		font-size: 2.7rem;
 	}
 }
 
@@ -20,26 +20,22 @@ h2.section__title {
 	// align-items: center;
 	opacity: 0.9;
 	border-radius: 5px;
-	height: calc(100% - 15rem);
-
-	@include respond(phone) {
-		top: initial;
-	}
 }
 
 .skill__card {
 	display: block;
 	width: 50%;
 	height: 100%;
-	@include respond(tab-port) {
-		display: initial;
-	}
 }
 
 .skill__card h3 {
 	font-size: 2.5rem;
 	width: 100%;
 	text-align: center;
+
+	@include respond(max540) {
+		font-size: 2rem;
+	}
 }
 
 ul {
@@ -62,16 +58,29 @@ li {
 	&__container {
 		height: 100%;
 		width: 100%;
+		@include respond(max750) {
+			justify-content: space-around;
+		}
 		display: flex;
+		justify-content: center;
 		flex-direction: column;
 		overflow: scroll;
-		padding-bottom: 5rem;
 	}
 
 	&__list {
 		text-align: center;
+
+		& li {
+			@include respond(max540) {
+				font-size: 1.8rem;
+			}
+		}
+
 		& h3 {
 			font-size: 3rem;
+			@include respond(max540) {
+				font-size: 2.2rem;
+			}
 		}
 	}
 }

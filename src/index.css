@@ -298,6 +298,12 @@ a.nav-link {
   align-items: flex-end;
   font-size: 1.4rem;
   padding: 2rem;
+  overflow-y: scroll;
+}
+@media (max-width: 412px) {
+  .about__container {
+    justify-content: flex-start;
+  }
 }
 .about__text {
   padding: 1rem;
@@ -340,18 +346,18 @@ a.nav-link {
 
 h2.section__title {
   font-size: 3.75rem;
-  height: 5rem;
   text-align: center;
   display: block;
   margin-top: 8rem;
   margin-bottom: 0;
   word-wrap: break-word;
   margin: 4rem auto 0;
+  padding-top: 1rem;
 }
-@media (max-width: 37.5em) {
+@media (max-width: 540px) {
   h2.section__title {
-    width: 80vw;
-    word-wrap: break-word;
+    margin-top: 2rem;
+    font-size: 2.7rem;
   }
 }
 
@@ -360,12 +366,6 @@ h2.section__title {
   justify-content: center;
   opacity: 0.9;
   border-radius: 5px;
-  height: calc(100% - 15rem);
-}
-@media (max-width: 37.5em) {
-  .skill__section {
-    top: initial;
-  }
 }
 
 .skill__card {
@@ -373,16 +373,16 @@ h2.section__title {
   width: 50%;
   height: 100%;
 }
-@media (max-width: 56.25em) {
-  .skill__card {
-    display: initial;
-  }
-}
 
 .skill__card h3 {
   font-size: 2.5rem;
   width: 100%;
   text-align: center;
+}
+@media (max-width: 540px) {
+  .skill__card h3 {
+    font-size: 2rem;
+  }
 }
 
 ul {
@@ -406,15 +406,30 @@ li {
   height: 100%;
   width: 100%;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   overflow: scroll;
-  padding-bottom: 5rem;
+}
+@media (max-width: 750px) {
+  .skill__container {
+    justify-content: space-around;
+  }
 }
 .skill__list {
   text-align: center;
 }
+@media (max-width: 540px) {
+  .skill__list li {
+    font-size: 1.8rem;
+  }
+}
 .skill__list h3 {
   font-size: 3rem;
+}
+@media (max-width: 540px) {
+  .skill__list h3 {
+    font-size: 2.2rem;
+  }
 }
 
 .project__list {
@@ -498,11 +513,22 @@ ul.project__text.stack {
   width: 1px;
   background-color: #4e3f30;
 }
+@media (max-width: 750px) {
+  .project__card {
+    overflow-x: scroll;
+  }
+}
 .project__container {
   height: 100%;
   width: 60vw;
   display: flex;
   flex-direction: column;
+  overflow-x: scroll;
+}
+@media (max-width: 750px) {
+  .project__container {
+    width: 100%;
+  }
 }
 .project__image {
   width: 30rem;
@@ -566,6 +592,13 @@ ul.project__text.stack {
   display: flex;
   left: 0;
   justify-content: center;
+}
+.portfolio__main-menu {
+  padding: 0;
+  margin: 0;
+}
+.portfolio__main-menu li {
+  font-size: 2.7rem;
 }
 @media (max-width: 750px) {
   .portfolio__main {
@@ -828,10 +861,9 @@ ul.project__text.stack {
 .portfolio__main .right {
   position: relative;
 }
-.portfolio__main .left ul,
-.portfolio__main .right ul {
-  padding: 0;
-  margin: 0;
+.portfolio__main .left ul.skill__list,
+.portfolio__main .right ul.skill__list {
+  padding-bottom: 2rem;
 }
 .portfolio__main .left ul.project__text.stack,
 .portfolio__main .right ul.project__text.stack {
@@ -853,7 +885,6 @@ ul.project__text.stack {
 .portfolio__main .left li,
 .portfolio__main .right li {
   margin-bottom: 1.5rem;
-  font-size: 2.7rem;
   font-weight: 600;
 }
 @media (max-width: 750px) {
