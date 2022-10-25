@@ -590,11 +590,6 @@ ul.project__text.stack {
   z-index: 1;
   animation-duration: 0.3s;
 }
-@media (max-width: 750px) {
-  .portfolio__main .left::before {
-    animation-name: fromBottomToFrame;
-  }
-}
 .portfolio__main .left h2, .portfolio__main .left h3, .portfolio__main .left li, .portfolio__main .left p, .portfolio__main .left button, .portfolio__main .left i {
   color: #fefeeb;
   animation-name: toLightFont;
