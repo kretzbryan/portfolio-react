@@ -730,7 +730,7 @@ ul.project__text.stack {
 }
 @media (max-width: 750px) {
   .portfolio__main .right {
-    height: 40vh;
+    height: 40%;
     position: relative;
   }
 }
