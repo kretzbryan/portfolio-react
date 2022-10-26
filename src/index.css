@@ -625,7 +625,7 @@ ul.project__text.stack {
     width: 2.5px;
     position: absolute;
     top: 0;
-    left: 41.5px;
+    left: 42px;
   }
 }
 
@@ -650,7 +650,7 @@ ul.project__text.stack {
     width: 2.5px;
     height: calc(100% - 1.1rem);
     bottom: 0;
-    left: 41.5px;
+    left: 42px;
     right: auto;
     top: auto;
   }
