@@ -67,11 +67,11 @@
 		&::before {
 			content: '';
 			height: 60vh;
-			width: 3px;
+			width: 2.5px;
 			position: absolute;
 			background-color: $color-milk;
 			top: 0;
-			left: 43px;
+			left: 41.5px;
 		}
 	}
 }
@@ -142,7 +142,7 @@
 				animation-duration: 0.3s;
 
 				@include respond(max750) {
-					width: calc(40vh - 1.5rem);
+					width: calc(40vh - 0.85rem);
 				}
 			}
 			@include respond(max750) {
