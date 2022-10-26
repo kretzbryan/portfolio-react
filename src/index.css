@@ -82,12 +82,20 @@
     }
   }
 }
-@keyframes rotateSkew {
+@keyframes rotateSkewDesktop {
   from {
     transform: translate(-50%, -50%);
   }
   to {
     transform: translate(-45%, -50%) rotate(90deg);
+  }
+}
+@keyframes rotateSkewMobile {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: translate(-50%, -55%) rotate(-90deg);
   }
 }
 @keyframes fillLeftToRight {
@@ -96,6 +104,22 @@
   }
   100% {
     right: 0;
+  }
+}
+@keyframes fillBottomToTop {
+  0% {
+    top: 75%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes fillTopToBottom {
+  0% {
+    bottom: 75%;
+  }
+  100% {
+    bottom: 0;
   }
 }
 @keyframes fillRightToLeft {
@@ -856,27 +880,55 @@ ul.project__text.stack {
   width: 200vw;
 }
 .splash-loader__dark {
-  position: relative;
+  position: absolute;
   right: 75%;
+  bottom: auto;
+  top: 50%;
+  left: auto;
   animation: fillLeftToRight 0.75s forwards;
   animation-delay: 0.5s;
   background-color: #4e3f30;
 }
+@media (max-width: 750px) {
+  .splash-loader__dark {
+    top: auto;
+    left: auto;
+    right: 50%;
+    bottom: 75%;
+    animation: fillTopToBottom 0.75s forwards;
+    animation-delay: 0.5s;
+  }
+}
 .splash-loader__light {
   background-color: #fefeeb;
-  position: relative;
+  position: absolute;
   left: 75%;
+  top: auto;
+  bottom: 50%;
+  right: auto;
   animation: fillRightToLeft 0.75s forwards;
   animation-delay: 0.5s;
 }
+@media (max-width: 750px) {
+  .splash-loader__light {
+    top: 75%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    animation: fillBottomToTop 0.75s forwards;
+    animation-delay: 0.5s;
+  }
+}
 .splash-loader__main {
   position: fixed;
+  height: 200vh;
+  width: 200vw;
   top: 50%;
   left: 50%;
   display: flex;
   flex-direction: column;
   transform: translate(-50%, -50%);
-  animation: rotateSkew 0.75s forwards;
+  animation: rotateSkewDesktop 0.75s forwards;
   animation-delay: 1s;
   overflow: hidden;
   z-index: 1;
@@ -884,6 +936,8 @@ ul.project__text.stack {
 @media (max-width: 750px) {
   .splash-loader__main {
     flex-direction: row;
+    animation: rotateSkewMobile 0.75s forwards;
+    animation-delay: 1s;
   }
 }
 

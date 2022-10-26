@@ -93,13 +93,24 @@
 	}
 }
 
-@keyframes rotateSkew {
+@keyframes rotateSkewDesktop {
 	from {
 		transform: translate(-50%, -50%);
 		// left: ;
 	}
 	to {
 		transform: translate(-45%, -50%) rotate(90deg);
+		// left: ;
+	}
+}
+
+@keyframes rotateSkewMobile {
+	from {
+		transform: translate(-50%, -50%);
+		// left: ;
+	}
+	to {
+		transform: translate(-50%, -55%) rotate(-90deg);
 		// left: ;
 	}
 }
@@ -113,6 +124,32 @@
 	100% {
 		// position: relative;
 		right: 0;
+		// left: ;
+	}
+}
+
+@keyframes fillBottomToTop {
+	0% {
+		// position: relative;
+		top: 75%;
+	}
+
+	100% {
+		// position: relative;
+		top: 0;
+		// left: ;
+	}
+}
+
+@keyframes fillTopToBottom {
+	0% {
+		// position: relative;
+		bottom: 75%;
+	}
+
+	100% {
+		// position: relative;
+		bottom: 0;
 		// left: ;
 	}
 }

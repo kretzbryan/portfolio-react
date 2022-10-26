@@ -5,9 +5,7 @@ const SplashLoader = () => {
 	return (
 		<div className='splash-loader__main'>
 			<motion.div className='splash-loader__light'></motion.div>
-			<motion.div className='splash-loader__dark'>
-				<div>start</div>
-			</motion.div>
+			<motion.div className='splash-loader__dark'></motion.div>
 		</div>
 	);
 };

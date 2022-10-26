@@ -11,7 +11,7 @@ const Main = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setShowMain(true);
-		}, 1700);
+		}, 2050);
 	}, []);
 
 	return (

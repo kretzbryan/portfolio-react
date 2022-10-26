@@ -6,8 +6,12 @@
 	}
 
 	&__dark {
-		position: relative;
+		position: absolute;
+
 		right: 75%;
+		bottom: auto;
+		top: 50%;
+		left: auto;
 		animation: fillLeftToRight 0.75s forwards;
 		animation-delay: 0.5s;
 		// animation-name: fillLeftToRight;
@@ -18,24 +22,49 @@
 		// 	transparent 0
 		// );
 		background-color: $color-coffee-bean;
+
+		@include respond(max750) {
+			top: auto;
+			left: auto;
+			right: 50%;
+			bottom: 75%;
+			animation: fillTopToBottom 0.75s forwards;
+			animation-delay: 0.5s;
+		}
 	}
 
 	&__light {
 		background-color: $color-milk;
-		position: relative;
+		position: absolute;
 		left: 75%;
+		top: auto;
+		bottom: 50%;
+		right: auto;
 		animation: fillRightToLeft 0.75s forwards;
 		animation-delay: 0.5s;
+
+		@include respond(max750) {
+			top: 75%;
+			left: 50%;
+			right: auto;
+			bottom: auto;
+
+			// top: 75%;
+			animation: fillBottomToTop 0.75s forwards;
+			animation-delay: 0.5s;
+		}
 	}
 
 	&__main {
 		position: fixed;
+		height: 200vh;
+		width: 200vw;
 		top: 50%;
 		left: 50%;
 		display: flex;
 		flex-direction: column;
 		transform: translate(-50%, -50%);
-		animation: rotateSkew 0.75s forwards;
+		animation: rotateSkewDesktop 0.75s forwards;
 		animation-delay: 1s;
 		overflow: hidden;
 		// transform: translate(-40%, -50%) rotate(90deg);
@@ -44,6 +73,8 @@
 
 		@include respond(max750) {
 			flex-direction: row;
+			animation: rotateSkewMobile 0.75s forwards;
+			animation-delay: 1s;
 		}
 	}
 }
