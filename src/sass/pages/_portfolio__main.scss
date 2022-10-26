@@ -30,10 +30,10 @@
 	&::before {
 		content: '';
 		width: 60vw;
-		height: 3px;
+		height: 2.5px;
 		position: absolute;
 		background-color: $color-milk;
-		top: 70px;
+		top: 68px;
 		left: 0;
 		z-index: 1;
 		animation-duration: 0.3s;
@@ -110,7 +110,8 @@
 				font-weight: 500;
 				position: relative;
 				top: 1px;
-
+				padding: 0;
+				margin: 0;
 				& span {
 					display: inline-block;
 					animation-name: toClose;
@@ -123,17 +124,20 @@
 		& li-icon {
 			display: block;
 			// top: -3px;
+			height: 155px;
+			width: 163px;
+			position: relative;
 
 			&::before {
 				content: '';
 				position: absolute;
 
 				z-index: 10;
-				height: 3px;
+				height: 2.5px;
 				// right: 0.1rem;
 				right: 0.1rem;
-				top: 70px;
-				width: calc(100% - 0.1rem);
+				top: 0.85rem;
+				width: calc(40vw - 1.5rem);
 				animation-name: toLightFont;
 				animation-duration: 0.3s;
 

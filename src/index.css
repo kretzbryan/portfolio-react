@@ -636,10 +636,10 @@ ul.project__text.stack {
 .portfolio__main .left::before {
   content: "";
   width: 60vw;
-  height: 3px;
+  height: 2.5px;
   position: absolute;
   background-color: #fefeeb;
-  top: 70px;
+  top: 68px;
   left: 0;
   z-index: 1;
   animation-duration: 0.3s;
@@ -708,6 +708,8 @@ ul.project__text.stack {
   font-weight: 500;
   position: relative;
   top: 1px;
+  padding: 0;
+  margin: 0;
 }
 .portfolio__main .right header h2 button span {
   display: inline-block;
@@ -717,15 +719,18 @@ ul.project__text.stack {
 }
 .portfolio__main .right header li-icon {
   display: block;
+  height: 155px;
+  width: 163px;
+  position: relative;
 }
 .portfolio__main .right header li-icon::before {
   content: "";
   position: absolute;
   z-index: 10;
-  height: 3px;
+  height: 2.5px;
   right: 0.1rem;
-  top: 70px;
-  width: calc(100% - 0.1rem);
+  top: 0.85rem;
+  width: calc(40vw - 1.5rem);
   animation-name: toLightFont;
   animation-duration: 0.3s;
 }

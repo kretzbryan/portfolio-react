@@ -20,8 +20,8 @@ const MainRight = ({ menuOpen, setMenuOpen, setCurrentWindow }) => {
 					{/* {menuOpen ? ( */}
 					<>
 						<svg
-							width='122pt'
-							height='122pt'
+							width='100%'
+							height='auto'
 							version='1.1'
 							viewBox='0 0 122 122'
 							preserveAspectRatio='none'
