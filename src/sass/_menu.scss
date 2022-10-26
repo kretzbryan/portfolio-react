@@ -4,52 +4,13 @@
 			// animation-name: toLightBackground;
 			// animation-duration: 0.5s;
 			// background-color: $color-milk;
-			& h2,
-			& h3,
-			& li,
-			& i,
-			& p,
-			& button {
-				// color: $color-coffee-bean;
-				animation-name: toDarkFont 0.5s forwards;
-			}
-
-			& li-icon::before {
-				animation-name: toLightBackground 0.5s forwards;
-
-				background-color: $color-milk;
-			}
-
-			& svg {
-				animation-name: toDarkFill 0.5s forwards;
-
-				fill: $color-coffee-bean;
-			}
 		}
 		.right {
-			animation-name: toDarkBackground 0.5s forwards;
+			// & svg {
+			// 	animation-name: toLightFill 0.5s forwards;
 
-			background-color: $color-coffee-bean;
-			& h2,
-			& li,
-			& i,
-			& button {
-				// color: $color-coffee-bean;
-				animation-name: toLightFont 0.5s forwards;
-
-				color: $color-milk;
-			}
-
-			& li-icon::before {
-				animation-name: toLightBackground 0.5s forwards;
-
-				background-color: $color-coffee-bean;
-			}
-			& svg {
-				animation-name: toLightFill 0.5s forwards;
-
-				fill: $color-milk;
-			}
+			// 	fill: $color-milk;
+			// }
 		}
 	}
 

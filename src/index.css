@@ -573,34 +573,6 @@ ul.project__text.stack {
   margin-top: 3rem;
 }
 
-.portfolio__main.menu-open .left h2, .portfolio__main.menu-open .left h3, .portfolio__main.menu-open .left li, .portfolio__main.menu-open .left i, .portfolio__main.menu-open .left p, .portfolio__main.menu-open .left button {
-  animation-name: toDarkFont 0.5s forwards;
-}
-.portfolio__main.menu-open .left li-icon::before {
-  animation-name: toLightBackground 0.5s forwards;
-  background-color: #fefeeb;
-}
-.portfolio__main.menu-open .left svg {
-  animation-name: toDarkFill 0.5s forwards;
-  fill: #4e3f30;
-}
-.portfolio__main.menu-open .right {
-  animation-name: toDarkBackground 0.5s forwards;
-  background-color: #4e3f30;
-}
-.portfolio__main.menu-open .right h2, .portfolio__main.menu-open .right li, .portfolio__main.menu-open .right i, .portfolio__main.menu-open .right button {
-  animation-name: toLightFont 0.5s forwards;
-  color: #fefeeb;
-}
-.portfolio__main.menu-open .right li-icon::before {
-  animation-name: toLightBackground 0.5s forwards;
-  background-color: #4e3f30;
-}
-.portfolio__main.menu-open .right svg {
-  animation-name: toLightFill 0.5s forwards;
-  fill: #fefeeb;
-}
-
 .portfolio__main {
   position: fixed;
   width: 100%;
@@ -608,6 +580,7 @@ ul.project__text.stack {
   display: flex;
   left: 0;
   justify-content: center;
+  backface-visibility: hidden;
 }
 .portfolio__main-menu {
   padding: 0;
@@ -632,7 +605,7 @@ ul.project__text.stack {
   height: 2.5px;
   position: absolute;
   background-color: #fefeeb;
-  top: 68.5px;
+  top: 67.5px;
   left: 0;
   z-index: 1;
 }
@@ -667,9 +640,8 @@ ul.project__text.stack {
   content: "";
   position: absolute;
   z-index: 10;
-  width: 2.5px;
   height: 2.5px;
-  top: 68.5px;
+  top: 67.5px;
   width: calc(40vw - 1.7rem);
   animation: toDarkBackground 0.5s forwards;
 }
@@ -715,6 +687,7 @@ ul.project__text.stack {
 .portfolio__main .right header h2 button span {
   display: inline-block;
   animation: toClose 0.5s forwards;
+  will-change: transform;
 }
 .portfolio__main .right header li-icon {
   display: block;
@@ -834,6 +807,7 @@ ul.project__text.stack {
 }
 .portfolio__main.menu-open .right h2 button span {
   animation: toOpen 0.5s forwards;
+  will-change: transform;
 }
 .portfolio__main.menu-open .right i.fab, .portfolio__main.menu-open .right i.far {
   color: #fefeeb;
@@ -899,11 +873,18 @@ ul.project__text.stack {
   position: fixed;
   top: 50%;
   left: 50%;
+  display: flex;
+  flex-direction: column;
   transform: translate(-50%, -50%);
   animation: rotateSkew 0.75s forwards;
   animation-delay: 1s;
   overflow: hidden;
   z-index: 1;
+}
+@media (max-width: 750px) {
+  .splash-loader__main {
+    flex-direction: row;
+  }
 }
 
 .external__link__container {

@@ -5,6 +5,7 @@
 	display: flex;
 	left: 0;
 	justify-content: center;
+	backface-visibility: hidden;
 
 	&-menu {
 		padding: 0;
@@ -32,7 +33,7 @@
 		height: 2.5px;
 		position: absolute;
 		background-color: $color-milk;
-		top: 68.5px;
+		top: 67.5px;
 		left: 0;
 		z-index: 1;
 	}
@@ -80,12 +81,11 @@
 		position: absolute;
 
 		z-index: 10;
-		width: 2.5px;
 		// right: 0.1rem;
 		// right: 0.1rem;
 		// top: 0.85rem;
 		height: 2.5px;
-		top: 68.5px;
+		top: 67.5px;
 		width: calc(40vw - 1.7rem);
 		animation: toDarkBackground 0.5s forwards;
 
@@ -133,7 +133,7 @@
 				& span {
 					display: inline-block;
 					animation: toClose 0.5s forwards;
-
+					will-change: transform;
 					// transform: rotate(0deg);
 				}
 			}
@@ -285,7 +285,7 @@
 			cursor: pointer;
 			& span {
 				animation: toOpen 0.5s forwards;
-
+				will-change: transform;
 				// transform: rotate(45deg);
 			}
 		}
