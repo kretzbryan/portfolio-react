@@ -30,6 +30,11 @@ body {
 	width: calc(100% - 0px);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	&.preload * {
+		transition: background-color 0s, color 0s, width 0s, height 0s, padding 0s,
+			margin 0s !important;
+	}
 }
 button.nav__link {
 	font-size: 2.7rem;
