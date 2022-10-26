@@ -1,7 +1,7 @@
 .portfolio__main {
 	position: fixed;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	left: 0;
 	justify-content: center;
@@ -21,9 +21,8 @@
 }
 
 .portfolio__main .left {
-	background-color: $color-coffee-bean;
-	animation-name: toDarkBackground;
-	animation-duration: 0.5s;
+	// background-color: $color-coffee-bean;
+	animation: toDarkBackground 0.5s forwards;
 	// color: $color-milk;
 	width: 60%;
 
@@ -33,10 +32,9 @@
 		height: 2.5px;
 		position: absolute;
 		background-color: $color-milk;
-		top: 68px;
+		top: 68.5px;
 		left: 0;
 		z-index: 1;
-		animation-duration: 0.3s;
 	}
 	& h2,
 	& h3,
@@ -44,34 +42,30 @@
 	& p,
 	& button,
 	& i {
-		color: $color-milk;
-		animation-name: toLightFont;
-		animation-duration: 0.5s;
+		// color: $color-milk;
+		animation: toLightFont 0.5s forwards;
 	}
 
-	& li-icon::before {
-		animation-name: toLightBackground;
-		animation-duration: 0.5s;
-		background-color: $color-milk;
-	}
+	// & li-icon::before {
+	// 	animation: toLightBackground 0.5s forwards;
+
+	// 	background-color: $color-milk;
+	// }
 
 	& svg {
-		animation-name: toLightFill;
-		animation-duration: 0.5s;
-		color: $color-milk;
+		animation: toLightFill 0.5s forwards;
 	}
 
 	@include respond(max750) {
-		height: 60vh;
+		height: 60%;
 
 		&::before {
 			content: '';
-			height: 60vh;
+			height: 100%;
 			width: 2.5px;
 			position: absolute;
-			background-color: $color-milk;
 			top: 0;
-			left: 42px;
+			left: 41.5px;
 		}
 	}
 }
@@ -80,11 +74,35 @@
 	width: 40%;
 	background-color: $color-milk;
 	left: 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+
+		z-index: 10;
+		width: 2.5px;
+		// right: 0.1rem;
+		// right: 0.1rem;
+		// top: 0.85rem;
+		height: 2.5px;
+		top: 68.5px;
+		width: calc(40vw - 1.7rem);
+		animation: toDarkBackground 0.5s forwards;
+
+		@include respond(max750) {
+			width: 2.5px;
+			height: calc(100% - 1.1rem);
+			bottom: 0;
+			left: 41.5px;
+			right: auto;
+			top: auto;
+		}
+	}
 	& ul {
 		position: absolute;
 	}
-	animation-name: toLightBackground;
-	animation-duration: 0.5s;
+	animation: toLightBackground 0.5s forwards;
+
 	background-color: $color-milk;
 
 	& header {
@@ -114,9 +132,9 @@
 				margin: 0;
 				& span {
 					display: inline-block;
-					animation-name: toClose;
-					animation-duration: 0.5s;
-					transform: rotate(0deg);
+					animation: toClose 0.5s forwards;
+
+					// transform: rotate(0deg);
 				}
 			}
 		}
@@ -128,23 +146,6 @@
 			width: 163px;
 			position: relative;
 
-			&::before {
-				content: '';
-				position: absolute;
-
-				z-index: 10;
-				height: 2.5px;
-				// right: 0.1rem;
-				right: 0.1rem;
-				top: 0.85rem;
-				width: calc(40vw - 1.5rem);
-				animation-name: toLightFont;
-				animation-duration: 0.3s;
-
-				@include respond(max750) {
-					width: calc(40vh - 0.85rem);
-				}
-			}
 			@include respond(max750) {
 				top: -7px;
 				// left: ;
@@ -178,21 +179,15 @@
 	& button,
 	& li-icon {
 		color: $color-coffee-bean;
-		animation-name: toDarkFont;
-		animation-duration: 0.5s;
+		animation: toDarkFont 0.5s forwards;
 	}
 
 	& li-icon::before {
-		animation-name: toDarkBackground;
-		animation-duration: 0.5s;
-		background-color: $color-coffee-bean;
+		animation: toDarkBackground 0.5s forwards;
 	}
 
 	& svg {
-		animation-name: toDarkFill;
-		animation-duration: 0.5s;
-
-		fill: $color-coffee-bean;
+		animation: toDarkFill 0.5s forwards;
 	}
 
 	@include respond(max750) {
@@ -203,9 +198,7 @@
 
 .portfolio__main.menu-open .left {
 	// width: 60%;
-	animation-name: toLightBackground;
-	animation-duration: 0.5s;
-	background-color: $color-milk;
+	animation: toLightBackground 0.5s forwards;
 
 	& h2,
 	& h3,
@@ -214,30 +207,20 @@
 	& p,
 	& button {
 		color: $color-coffee-bean;
-		animation-name: toDarkFont;
-		animation-duration: 0.5s;
+		animation: toDarkFont 0.5s forwards;
 	}
 
 	& li {
 		color: $color-coffee-bean;
 	}
 
-	& li-icon::before {
-		animation-name: toLightBackground;
-		animation-duration: 0.5s;
-		background-color: $color-milk;
-	}
-
 	& svg {
-		animation-name: toDarkFill;
-		animation-duration: 0.5s;
-
-		fill: $color-coffee-bean;
+		animation: toDarkFill 0.5s forwards;
 	}
 	&::before {
 		content: '';
 		height: 60vh;
-		width: 3px;
+		width: 2.5px;
 		position: absolute;
 		background-color: transparent;
 		top: 0;
@@ -248,7 +231,7 @@
 		&::before {
 			content: '';
 			height: 60vh;
-			width: 3px;
+			width: 2.5px;
 			position: absolute;
 			background-color: transparent;
 			top: 0;
@@ -258,30 +241,21 @@
 }
 
 .portfolio__main.menu-open .right {
-	animation-name: toDarkBackground;
-	animation-duration: 0.5s;
-	background-color: $color-coffee-bean;
+	animation: toDarkBackground 0.5s forwards;
 
 	& h2,
 	& li,
 	& i,
 	& button {
 		// color: $color-coffee-bean;
-		animation-name: toLightFont;
-		animation-duration: 0.5s;
-		color: $color-milk;
+		animation: toLightFont 0.5s forwards;
 	}
 
-	& li-icon::before {
-		background-color: $color-milk;
-		animation-name: toLightBackground;
-		animation-duration: 0.5s;
+	&::before {
+		animation: toLightBackground 0.5s forwards;
 	}
 	& svg {
-		animation-name: toLightFill;
-		animation-duration: 0.5s;
-
-		fill: $color-milk;
+		animation: toLightFill 0.5s forwards;
 	}
 
 	& ul {
@@ -306,14 +280,13 @@
 
 	& h2 {
 		button {
-			color: $color-milk;
-			animation-name: toLightFont;
-			animation-duration: 0.5s;
+			animation: toLightFont 0.5s forwards;
+
 			cursor: pointer;
 			& span {
-				animation-name: toOpen;
-				animation-duration: 0.5s;
-				transform: rotate(45deg);
+				animation: toOpen 0.5s forwards;
+
+				// transform: rotate(45deg);
 			}
 		}
 	}
