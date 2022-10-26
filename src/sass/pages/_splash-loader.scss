@@ -18,7 +18,6 @@
 		// 	transparent 0
 		// );
 		background-color: $color-coffee-bean;
-		overflow-y: scroll;
 	}
 
 	&__light {
@@ -36,6 +35,7 @@
 		transform: translate(-50%, -50%);
 		animation: rotateSkew 0.75s forwards;
 		animation-delay: 1s;
+		overflow: hidden;
 		// transform: translate(-40%, -50%) rotate(90deg);
 		z-index: 1;
 		// transform: translateX(60vw) rotate(45deg);

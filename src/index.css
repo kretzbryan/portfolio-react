@@ -931,7 +931,6 @@ ul.project__text.stack {
   animation: fillLeftToRight 0.75s forwards;
   animation-delay: 0.5s;
   background-color: #4e3f30;
-  overflow-y: scroll;
 }
 .splash-loader__light {
   background-color: #fefeeb;
@@ -947,6 +946,7 @@ ul.project__text.stack {
   transform: translate(-50%, -50%);
   animation: rotateSkew 0.75s forwards;
   animation-delay: 1s;
+  overflow: hidden;
   z-index: 1;
 }
 
