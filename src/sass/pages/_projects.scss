@@ -83,7 +83,8 @@
 	font-size: 2rem;
 	text-align: left;
 	line-height: 1.5;
-	overflow: scroll;
+	display: flex;
+	align-items: center;
 }
 
 ul.project__text.stack {
@@ -115,7 +116,6 @@ ul.project__text.stack {
 
 		& .flex {
 			padding: 1.5rem;
-			height: calc(100% - 7rem);
 			width: 100%;
 			position: relative;
 
@@ -123,8 +123,8 @@ ul.project__text.stack {
 				content: '';
 				position: absolute;
 				left: 30%;
-				top: 1.5rem;
-				height: calc(100% - 3rem);
+				top: 0;
+				height: 100%;
 				width: 1px;
 				background-color: $color-coffee-bean;
 			}
