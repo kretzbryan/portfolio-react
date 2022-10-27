@@ -31,6 +31,9 @@ h2.section__title {
 .skill__card {
 	display: block;
 	padding: 0.5rem 2rem;
+	@include respond(max750) {
+		padding-left: 1rem;
+	}
 }
 
 .skill__card h3 {
@@ -73,6 +76,11 @@ li {
 		justify-content: flex-start;
 		flex-direction: column;
 		overflow: scroll;
+
+		@include respond(max750) {
+			width: calc(100% - 42px);
+			left: 42px;
+		}
 		// @include respond(max750) {
 		// 	justify-content: space-around;
 		// }

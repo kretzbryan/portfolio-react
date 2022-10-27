@@ -9,12 +9,19 @@ const Project = ({ title, image, href, description, techStack }) => {
 				</a>
 			</h5>
 			<div className='flex'>
-				<ul className='project__text stack'>
+				<ul className='project__text-stack'>
 					{techStack.map((item) => (
 						<li>{item}</li>
 					))}
 				</ul>
-				<p className='project__text summary'>{description}</p>
+				<div className='project__text-summary__container'>
+					<img
+						className='project__image'
+						src={image}
+						alt='landing screenshot'
+					/>
+					<p className='project__text-summary'>{description}</p>
+				</div>
 			</div>
 		</main>
 	);

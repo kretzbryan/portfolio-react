@@ -6,10 +6,11 @@ const Skills = () => {
 			<div className='skill__card'>
 				<h2 className='section__title'>Front-end:</h2>
 				<p className='skill__description'>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-					similique repellendus rerum laudantium a animi laborum vero maiores
-					consequuntur minima. Incidunt exercitationem laboriosam numquam cumque
-					accusantium doloribus cupiditate recusandae esse.
+					I have 3 years of experience in working with UI technologies,
+					primarily focusing on React Architecture and global state management
+					with Redux. As the sole UI engineer for Rove, I've played an integral
+					role in frontend infrastructure design and component management, and
+					continue to improve through design iteration.
 				</p>
 				<ul className='skill__list'>
 					<li className='skill__list-item'>
@@ -38,10 +39,7 @@ const Skills = () => {
 			<div className='skill__card'>
 				<h2 className='section__title'>Back-end:</h2>
 				<p className='skill__description'>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-					similique repellendus rerum laudantium a animi laborum vero maiores
-					consequuntur minima. Incidunt exercitationem laboriosam numquam cumque
-					accusantium doloribus cupiditate recusandae esse.
+					I have 3 years of experience working with noSql databases, and
 				</p>
 				<ul className='skill__list'>
 					<li className='skill__list-item'>
@@ -65,7 +63,7 @@ const Skills = () => {
 						Node.JS
 					</li>
 					<li className='skill__list-item'>
-						<i class='devicon-express-original'></i>
+						<i class='devicon-express-original-wordmark colored'></i>
 						Express
 					</li>
 					<li className='skill__list-item'>

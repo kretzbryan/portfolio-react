@@ -43,11 +43,6 @@
 	& section {
 		margin-top: 67.5px;
 		position: relative;
-
-		@include respond(max750) {
-			width: calc(100% - 42px);
-			left: 42px;
-		}
 	}
 
 	&::before {
@@ -331,20 +326,27 @@
 	position: relative;
 	z-index: 10;
 	& ul {
-		&.project__text.stack {
+		&.project__text-stack {
 			overflow: scroll;
 			padding: 1rem 2rem 3rem;
-			width: 30%;
+			width: 35%;
 			font-size: 2rem;
 			line-height: 1.5;
 			display: flex;
 			flex-direction: column;
 			align-items: flex-end;
-			justify-content: center;
+			justify-content: flex-start;
 			text-align: end;
 
 			& li {
 				font-size: 2rem;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				& i {
+					margin-left: 1rem;
+				}
 			}
 		}
 	}

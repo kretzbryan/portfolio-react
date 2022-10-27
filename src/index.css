@@ -330,6 +330,7 @@ a.nav-link {
 }
 
 .about__container {
+  color: transparent;
   margin-top: 4rem;
 }
 @media (max-width: 400px) {
@@ -338,9 +339,7 @@ a.nav-link {
   }
 }
 .about__wrapper {
-  width: 100%;
   height: 100%;
-  color: #4e3f30;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -348,10 +347,21 @@ a.nav-link {
   font-size: 1.4rem;
   padding: 67.5px 2rem;
   overflow-y: scroll;
+  background-image: linear-gradient(transparent 48%, currentColor 53%, currentColor 95%, transparent 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-attachment: fixed;
+  color: transparent;
 }
-@media (max-width: 412px) {
+@media (max-width: 750px) {
   .about__wrapper {
+    padding-left: 0;
+    width: calc(100% - 42px);
+    position: relative;
     justify-content: flex-start;
+    padding-top: 0;
+    margin-top: 8rem;
+    left: 42px;
   }
 }
 .about__text {
@@ -445,6 +455,11 @@ h2.section__title {
   display: block;
   padding: 0.5rem 2rem;
 }
+@media (max-width: 750px) {
+  .skill__card {
+    padding-left: 1rem;
+  }
+}
 
 .skill__card h3 {
   font-size: 2.5rem;
@@ -487,6 +502,12 @@ li i {
   flex-direction: column;
   overflow: scroll;
 }
+@media (max-width: 750px) {
+  .skill__container {
+    width: calc(100% - 42px);
+    left: 42px;
+  }
+}
 .skill__list {
   text-align: center;
   display: flex;
@@ -528,12 +549,9 @@ li i {
 }
 
 .project__list {
-  position: absolute;
-  right: 1.5rem;
-  top: 4rem;
   text-align: end;
-  height: 30rem;
-  width: 35rem;
+  padding-top: 1.5rem;
+  width: 100%;
 }
 .project__list .nav__link {
   color: #4e3f30;
@@ -564,18 +582,20 @@ li i {
   grid-area: text;
 }
 
-.summary {
-  width: 70%;
+.project__text-summary {
   margin: 0 auto;
-  padding: 1rem 4rem 3rem 2rem;
-  font-size: 2rem;
+  padding: 1rem 1rem 3rem 2rem;
+  font-size: 1.8rem;
   text-align: left;
   line-height: 1.5;
   display: flex;
   align-items: center;
 }
+.project__text-summary__container {
+  width: 65%;
+}
 
-ul.project__text.stack {
+ul.project__text-stack {
   padding: 1rem;
   line-height: 1.5;
   text-align: end;
@@ -592,6 +612,7 @@ ul.project__text.stack {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
   height: calc(100% - 28rem);
 }
 .project__card .flex {
@@ -602,7 +623,7 @@ ul.project__text.stack {
 .project__card .flex::before {
   content: "";
   position: absolute;
-  left: 30%;
+  left: 35%;
   top: 0;
   height: 100%;
   width: 1px;
@@ -610,7 +631,8 @@ ul.project__text.stack {
 }
 @media (max-width: 750px) {
   .project__card {
-    overflow-x: scroll;
+    width: calc(100% - 42px);
+    left: 42px;
   }
 }
 .project__container {
@@ -618,6 +640,7 @@ ul.project__text.stack {
   width: 60vw;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   overflow-x: scroll;
 }
 @media (max-width: 750px) {
@@ -629,7 +652,7 @@ ul.project__text.stack {
   width: 30rem;
   height: 19rem;
   display: block;
-  margin: 4rem;
+  margin: 0 auto;
 }
 .project__section {
   width: 100%;
@@ -687,12 +710,6 @@ ul.project__text.stack {
 .portfolio__main .left section {
   margin-top: 67.5px;
   position: relative;
-}
-@media (max-width: 750px) {
-  .portfolio__main .left section {
-    width: calc(100% - 42px);
-    left: 42px;
-  }
 }
 .portfolio__main .left::before {
   content: "";
@@ -908,22 +925,29 @@ ul.project__text.stack {
   position: relative;
   z-index: 10;
 }
-.portfolio__main .left ul.project__text.stack,
-.portfolio__main .right ul.project__text.stack {
+.portfolio__main .left ul.project__text-stack,
+.portfolio__main .right ul.project__text-stack {
   overflow: scroll;
   padding: 1rem 2rem 3rem;
-  width: 30%;
+  width: 35%;
   font-size: 2rem;
   line-height: 1.5;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: end;
 }
-.portfolio__main .left ul.project__text.stack li,
-.portfolio__main .right ul.project__text.stack li {
+.portfolio__main .left ul.project__text-stack li,
+.portfolio__main .right ul.project__text-stack li {
   font-size: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.portfolio__main .left ul.project__text-stack li i,
+.portfolio__main .right ul.project__text-stack li i {
+  margin-left: 1rem;
 }
 .portfolio__main .left li,
 .portfolio__main .right li {

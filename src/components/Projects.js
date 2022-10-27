@@ -13,13 +13,13 @@ const Projects = () => {
 
 	return (
 		<section className='project__container'>
-			{currentHovered || current ? (
+			{/* {currentHovered || current ? (
 				<img
 					className='project__image'
 					src={project_data[currentHovered || current].image}
 					alt='landing screenshot'
 				/>
-			) : null}
+			) : null} */}
 			<ul className='project__list'>
 				<li
 					onMouseLeave={handleMouseLeave}

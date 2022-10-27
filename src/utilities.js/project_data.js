@@ -3,6 +3,7 @@
 import ccImage from '../images/cirque-connections.png';
 import rednoseImage from '../images/andrea-d.png';
 import roveImage from '../images/rove_snapshot-1.png';
+import React from 'react';
 
 export const project_data = {
 	rove: {
@@ -11,13 +12,29 @@ export const project_data = {
 		href: 'https://www.travelwithrove.com/',
 		description: `Rove is an emerging travel startup based in Chicago. It is a solution for travelers seeking new vacation experiences without the chore of the lengthy planning that can be involved. It also serves as a tool for the administrator; the administrative application provides an administrator with an easy to use solution for curating vacations to the vision of a user's perfect vacation! I am the sole UI engineer - working closely with key stake holders - building the foundational front-end infrastructure using React and Redux. I also provided an integral role in creating the back-end infrastructure using Express and MongoDB, as well as provide support for Enterprise API integration.`,
 		techStack: [
-			'Sass',
-			'MongoDB',
-			'Express',
-			'Node.js',
-			'React',
-			'Redux',
-			'Axios',
+			<>
+				Sass <i class='devicon-sass-original colored'></i>
+			</>,
+			<>
+				MongoDB
+				<i class='devicon-mongodb-plain-wordmark colored'></i>
+			</>,
+			<>
+				Express
+				<i class='devicon-express-original-wordmark colored'></i>
+			</>,
+			<>
+				Node.JS
+				<i class='devicon-nodejs-plain-wordmark colored'></i>
+			</>,
+			<>
+				React
+				<i class='devicon-react-original-wordmark colored'></i>
+			</>,
+			<>
+				Redux
+				<i class='devicon-redux-original colored'></i>
+			</>,
 		],
 	},
 	'cirque-connections': {
