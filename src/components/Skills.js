@@ -39,7 +39,10 @@ const Skills = () => {
 			<div className='skill__card'>
 				<h2 className='section__title'>Back-end:</h2>
 				<p className='skill__description'>
-					I have 3 years of experience working with noSql databases, and
+					{/* I have 3 years of experience working with noSql databases, and */}
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non beatae
+					nobis vero quo! Incidunt eum optio dolorem maiores nihil quod minima
+					explicabo iure reprehenderit id, placeat animi esse earum recusandae?
 				</p>
 				<ul className='skill__list'>
 					<li className='skill__list-item'>
