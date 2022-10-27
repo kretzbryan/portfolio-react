@@ -6,7 +6,7 @@ const Skills = () => {
 			<div className='skill__card'>
 				<h2 className='section__title'>Front-end:</h2>
 				<p className='skill__description'>
-					I have 3 years of experience in working with UI technologies,
+					I have 2 1/2 years of experience in working with UI technologies,
 					primarily focusing on React Architecture and global state management
 					with Redux. As the sole UI engineer for Rove, I've played an integral
 					role in frontend infrastructure design and component management, and
@@ -39,10 +39,10 @@ const Skills = () => {
 			<div className='skill__card'>
 				<h2 className='section__title'>Back-end:</h2>
 				<p className='skill__description'>
-					{/* I have 3 years of experience working with noSql databases, and */}
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non beatae
-					nobis vero quo! Incidunt eum optio dolorem maiores nihil quod minima
-					explicabo iure reprehenderit id, placeat animi esse earum recusandae?
+					My core focus has been with noSQL databases, with 2 years of back-end
+					experience. As one of the first engineers at Rove, I was essential to
+					key infrastructure decisions, as well as provide support for
+					enterprise API integrations.
 				</p>
 				<ul className='skill__list'>
 					<li className='skill__list-item'>

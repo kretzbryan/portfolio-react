@@ -256,9 +256,15 @@ a.nav-link {
   display: block;
   margin: 0 auto;
   position: relative;
+  bottom: 1.5rem;
   width: 0;
   border-bottom: 1px solid #e4e3e3;
   transition: all 0.3s;
+}
+@media (max-width: 750px) {
+  .nav-link::after {
+    bottom: 0.5rem;
+  }
 }
 
 .nav-link.active {
@@ -594,6 +600,11 @@ li i {
 .project__text-summary__container {
   width: 65%;
 }
+@media (max-width: 950px) {
+  .project__text-summary__container {
+    width: 100%;
+  }
+}
 
 ul.project__text-stack {
   padding: 1rem;
@@ -629,10 +640,25 @@ ul.project__text-stack {
   width: 1px;
   background-color: #4e3f30;
 }
+@media (max-width: 950px) {
+  .project__card .flex {
+    flex-direction: column-reverse;
+  }
+  .project__card .flex::before {
+    content: none;
+  }
+}
+@media (max-width: 950px) {
+  .project__card {
+    height: auto;
+    padding-bottom: 5rem;
+  }
+}
 @media (max-width: 750px) {
   .project__card {
     width: calc(100% - 42px);
     left: 42px;
+    margin: 0;
   }
 }
 .project__container {
@@ -653,6 +679,12 @@ ul.project__text-stack {
   height: 19rem;
   display: block;
   margin: 0 auto;
+}
+@media (max-width: 750px) {
+  .project__image {
+    width: 75%;
+    height: auto;
+  }
 }
 .project__section {
   width: 100%;
@@ -908,6 +940,11 @@ ul.project__text-stack {
   font-weight: 500;
   letter-spacing: 1px;
 }
+@media (max-width: 750px) {
+  .portfolio__main.menu-open .right li .nav-link {
+    text-align: end;
+  }
+}
 .portfolio__main.menu-open .right h2 button {
   animation: toLightFont 0.5s forwards;
   cursor: pointer;
@@ -949,9 +986,42 @@ ul.project__text-stack {
 .portfolio__main .right ul.project__text-stack li i {
   margin-left: 1rem;
 }
+@media (max-width: 950px) {
+  .portfolio__main .left ul.project__text-stack li,
+.portfolio__main .right ul.project__text-stack li {
+    width: auto;
+    margin-right: 1rem;
+  }
+}
+@media (max-width: 950px) {
+  .portfolio__main .left ul.project__text-stack,
+.portfolio__main .right ul.project__text-stack {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+  }
+  .portfolio__main .left ul.project__text-stack::before,
+.portfolio__main .right ul.project__text-stack::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #4e3f30;
+  }
+}
 .portfolio__main .left li,
 .portfolio__main .right li {
   margin-bottom: 1.5rem;
+}
+@media (max-width: 750px) {
+  .portfolio__main .left li,
+.portfolio__main .right li {
+    margin: 0.5rem 0;
+  }
 }
 @media (max-width: 750px) {
   .portfolio__main .left,

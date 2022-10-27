@@ -300,6 +300,10 @@
 		color: $color-milk;
 		font-weight: 500;
 		letter-spacing: 1px;
+
+		@include respond(max750) {
+			text-align: end;
+		}
 	}
 
 	& h2 {
@@ -347,11 +351,38 @@
 				& i {
 					margin-left: 1rem;
 				}
+
+				@include respond(max950) {
+					width: auto;
+					margin-right: 1rem;
+				}
+			}
+
+			@include respond(max950) {
+				width: 100%;
+				flex-direction: row;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				padding-top: 3rem;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 1px;
+					background-color: $color-coffee-bean;
+				}
 			}
 		}
 	}
 	& li {
 		margin-bottom: 1.5rem;
+
+		@include respond(max750) {
+			margin: 0.5rem 0;
+		}
 	}
 
 	@include respond(max750) {

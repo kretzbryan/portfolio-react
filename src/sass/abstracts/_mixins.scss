@@ -31,8 +31,19 @@
 			@content;
 		} // 900px
 	}
+	@if $breakpoint == max650 {
+		@media (max-width: 650px) {
+			@content;
+		} // 900px
+	}
 	@if $breakpoint == max750 {
 		@media (max-width: 750px) {
+			@content;
+		} // 900px
+	}
+
+	@if $breakpoint == max950 {
+		@media (max-width: 950px) {
 			@content;
 		} // 900px
 	}

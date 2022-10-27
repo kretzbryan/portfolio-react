@@ -118,9 +118,14 @@ a.nav-link {
 	display: block;
 	margin: 0 auto;
 	position: relative;
+	bottom: 1.5rem;
 	width: 0;
 	border-bottom: 1px solid #e4e3e3;
 	transition: all 0.3s;
+
+	@include respond(max750) {
+		bottom: 0.5rem;
+	}
 }
 
 .nav-link.active {

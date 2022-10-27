@@ -80,6 +80,10 @@
 		align-items: center;
 		&__container {
 			width: 65%;
+
+			@include respond(max950) {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -126,11 +130,24 @@ ul.project__text-stack {
 				width: 1px;
 				background-color: $color-coffee-bean;
 			}
+
+			@include respond(max950) {
+				flex-direction: column-reverse;
+				&::before {
+					content: none;
+				}
+			}
+		}
+
+		@include respond(max950) {
+			height: auto;
+			padding-bottom: 5rem;
 		}
 
 		@include respond(max750) {
 			width: calc(100% - 42px);
 			left: 42px;
+			margin: 0;
 		}
 	}
 
@@ -152,6 +169,21 @@ ul.project__text-stack {
 		height: 19rem;
 		display: block;
 		margin: 0 auto;
+
+		@include respond(max750) {
+			width: 75%;
+			height: auto;
+		}
+
+		// @include respond(max650) {
+		// 	width: 45rem;
+		// 	height: auto;
+		// }
+
+		// @include respond(max540) {
+		// 	width: 40rem;
+		// 	height: auto;
+		// }
 	}
 	&__section {
 		width: 100%;
