@@ -27,12 +27,35 @@
 	// color: $color-milk;
 	width: 60%;
 
+	&__title {
+		position: absolute;
+		margin-bottom: 0.25rem;
+		padding-left: 2rem;
+		font-size: 3rem;
+		font-weight: 500;
+
+		@include respond(max750) {
+			padding-left: 5rem;
+			left: 42px;
+		}
+	}
+
+	& section {
+		margin-top: 67.5px;
+		position: relative;
+
+		@include respond(max750) {
+			width: calc(100% - 42px);
+			left: 42px;
+		}
+	}
+
 	&::before {
 		content: '';
 		width: 60vw;
 		height: 2.5px;
 		position: absolute;
-		background-color: $color-milk;
+		animation: toLightBackground 0.5s forwards;
 		top: 67.5px;
 		left: 0;
 		z-index: 1;
@@ -41,8 +64,7 @@
 	& h3,
 	& li,
 	& p,
-	& button,
-	& i {
+	& button {
 		// color: $color-milk;
 		animation: toLightFont 0.5s forwards;
 	}
@@ -175,7 +197,6 @@
 	& h2,
 	& h3,
 	& li,
-	& i,
 	& button,
 	& li-icon {
 		color: $color-coffee-bean;
@@ -203,7 +224,6 @@
 	& h2,
 	& h3,
 	& li,
-	& i,
 	& p,
 	& button {
 		color: $color-coffee-bean;
@@ -217,15 +237,25 @@
 	& svg {
 		animation: toDarkFill 0.5s forwards;
 	}
+
 	&::before {
 		content: '';
-		height: 60vh;
-		width: 2.5px;
-		position: absolute;
-		background-color: transparent;
-		top: 0;
-		left: 36px;
+		animation: toDarkBackground 0.5s forwards;
 	}
+
+	// &.projects,
+	// &.expertise {
+	// 	&::before {
+	// 		content: '';
+	// 		height: 60vh;
+	// 		width: 2.5px;
+	// 		position: absolute;
+	// 		background-color: transparent;
+	// 		top: 0;
+	// 		left: 36px;
+	// 		animation: none;
+	// 	}
+	// }
 
 	@include respond(max750) {
 		&::before {
@@ -235,7 +265,7 @@
 			position: absolute;
 			background-color: transparent;
 			top: 0;
-			left: 36px;
+			left: 42px;
 		}
 	}
 }
@@ -245,7 +275,6 @@
 
 	& h2,
 	& li,
-	& i,
 	& button {
 		// color: $color-coffee-bean;
 		animation: toLightFont 0.5s forwards;
@@ -302,10 +331,6 @@
 	position: relative;
 	z-index: 10;
 	& ul {
-		&.skill__list {
-			padding-bottom: 2rem;
-		}
-
 		&.project__text.stack {
 			overflow: scroll;
 			padding: 1rem 2rem 3rem;
@@ -325,8 +350,6 @@
 	}
 	& li {
 		margin-bottom: 1.5rem;
-
-		font-weight: 600;
 	}
 
 	@include respond(max750) {

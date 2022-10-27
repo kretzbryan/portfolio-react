@@ -308,15 +308,6 @@ a.nav-link {
   line-height: 1.3;
 }
 
-.about__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
-  padding: 2rem;
-}
-
 .headshot {
   border-radius: 100%;
   height: 20rem;
@@ -339,47 +330,73 @@ a.nav-link {
 }
 
 .about__container {
+  margin-top: 4rem;
+}
+@media (max-width: 400px) {
+  .about__container {
+    margin-top: 2rem;
+  }
+}
+.about__wrapper {
   width: 100%;
   height: 100%;
   color: #4e3f30;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   font-size: 1.4rem;
-  padding: 2rem;
+  padding: 67.5px 2rem;
   overflow-y: scroll;
 }
 @media (max-width: 412px) {
-  .about__container {
+  .about__wrapper {
     justify-content: flex-start;
   }
 }
 .about__text {
   padding: 1rem;
   width: 62;
-  text-align: end;
   font-size: 1.7rem;
-  margin-top: 1rem;
+  margin-top: 6rem;
+}
+@media (max-width: 400px) {
+  .about__text {
+    margin-top: 2rem;
+  }
+}
+.about__container .circle {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  shape-outside: circle();
+  border-radius: 50%;
+  height: 20rem;
+  width: 20rem;
+  margin-right: 2rem;
+}
+@media (max-width: 750px) {
+  .about__container .circle {
+    float: right;
+    margin-left: 2rem;
+    margin-right: 0;
+  }
+}
+@media (max-width: 400px) {
+  .about__container .circle {
+    float: none;
+    margin: 0 auto;
+  }
 }
 .about__headshot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
   height: 20rem;
   width: 20rem;
   object-fit: cover;
-  margin-right: 1rem;
-}
-@media (max-width: 56.25em) {
-  .about__headshot {
-    transform: initial;
-    margin-top: 0;
-    margin-bottom: 2rem;
-  }
-}
-@media (max-width: 37.5em) {
-  .about__headshot {
-    height: 15rem;
-    width: 15rem;
-  }
 }
 
 .main-title h1 {
@@ -395,13 +412,14 @@ a.nav-link {
 }
 
 h2.section__title {
-  font-size: 3.75rem;
-  text-align: center;
+  font-size: 2.2rem;
+  text-align: left;
+  font-weight: 500;
   display: block;
   margin-top: 8rem;
   margin-bottom: 0;
   word-wrap: break-word;
-  margin: 4rem auto 0;
+  margin: 2rem 0 0;
   padding-top: 1rem;
 }
 @media (max-width: 540px) {
@@ -418,10 +436,14 @@ h2.section__title {
   border-radius: 5px;
 }
 
+.skill__description {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
 .skill__card {
   display: block;
-  width: 50%;
-  height: 100%;
+  padding: 0.5rem 2rem;
 }
 
 .skill__card h3 {
@@ -448,25 +470,48 @@ ul {
 }
 
 li {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
   width: 100%;
+}
+li i {
+  font-size: 3.3rem;
+  color: initial;
 }
 
 .skill__container {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   overflow: scroll;
 }
-@media (max-width: 750px) {
-  .skill__container {
-    justify-content: space-around;
-  }
-}
 .skill__list {
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding: 0 2rem;
+  justify-content: space-between;
+}
+.skill__list li {
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.skill__list li.skill__list-item {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.skill__list li i {
+  margin-right: 0.5rem;
+}
+@media (max-width: 75em) {
+  .skill__list li {
+    width: 18rem;
+  }
 }
 @media (max-width: 540px) {
   .skill__list li {
@@ -626,17 +671,40 @@ ul.project__text.stack {
   animation: toDarkBackground 0.5s forwards;
   width: 60%;
 }
+.portfolio__main .left__title {
+  position: absolute;
+  margin-bottom: 0.25rem;
+  padding-left: 2rem;
+  font-size: 3rem;
+  font-weight: 500;
+}
+@media (max-width: 750px) {
+  .portfolio__main .left__title {
+    padding-left: 5rem;
+    left: 42px;
+  }
+}
+.portfolio__main .left section {
+  margin-top: 67.5px;
+  position: relative;
+}
+@media (max-width: 750px) {
+  .portfolio__main .left section {
+    width: calc(100% - 42px);
+    left: 42px;
+  }
+}
 .portfolio__main .left::before {
   content: "";
   width: 60vw;
   height: 2.5px;
   position: absolute;
-  background-color: #fefeeb;
+  animation: toLightBackground 0.5s forwards;
   top: 67.5px;
   left: 0;
   z-index: 1;
 }
-.portfolio__main .left h2, .portfolio__main .left h3, .portfolio__main .left li, .portfolio__main .left p, .portfolio__main .left button, .portfolio__main .left i {
+.portfolio__main .left h2, .portfolio__main .left h3, .portfolio__main .left li, .portfolio__main .left p, .portfolio__main .left button {
   animation: toLightFont 0.5s forwards;
 }
 .portfolio__main .left svg {
@@ -745,7 +813,7 @@ ul.project__text.stack {
   font-weight: 500;
   letter-spacing: 1px;
 }
-.portfolio__main .right h2, .portfolio__main .right h3, .portfolio__main .right li, .portfolio__main .right i, .portfolio__main .right button, .portfolio__main .right li-icon {
+.portfolio__main .right h2, .portfolio__main .right h3, .portfolio__main .right li, .portfolio__main .right button, .portfolio__main .right li-icon {
   color: #4e3f30;
   animation: toDarkFont 0.5s forwards;
 }
@@ -765,7 +833,7 @@ ul.project__text.stack {
 .portfolio__main.menu-open .left {
   animation: toLightBackground 0.5s forwards;
 }
-.portfolio__main.menu-open .left h2, .portfolio__main.menu-open .left h3, .portfolio__main.menu-open .left li, .portfolio__main.menu-open .left i, .portfolio__main.menu-open .left p, .portfolio__main.menu-open .left button {
+.portfolio__main.menu-open .left h2, .portfolio__main.menu-open .left h3, .portfolio__main.menu-open .left li, .portfolio__main.menu-open .left p, .portfolio__main.menu-open .left button {
   color: #4e3f30;
   animation: toDarkFont 0.5s forwards;
 }
@@ -777,12 +845,7 @@ ul.project__text.stack {
 }
 .portfolio__main.menu-open .left::before {
   content: "";
-  height: 60vh;
-  width: 2.5px;
-  position: absolute;
-  background-color: transparent;
-  top: 0;
-  left: 36px;
+  animation: toDarkBackground 0.5s forwards;
 }
 @media (max-width: 750px) {
   .portfolio__main.menu-open .left::before {
@@ -792,14 +855,14 @@ ul.project__text.stack {
     position: absolute;
     background-color: transparent;
     top: 0;
-    left: 36px;
+    left: 42px;
   }
 }
 
 .portfolio__main.menu-open .right {
   animation: toDarkBackground 0.5s forwards;
 }
-.portfolio__main.menu-open .right h2, .portfolio__main.menu-open .right li, .portfolio__main.menu-open .right i, .portfolio__main.menu-open .right button {
+.portfolio__main.menu-open .right h2, .portfolio__main.menu-open .right li, .portfolio__main.menu-open .right button {
   animation: toLightFont 0.5s forwards;
 }
 .portfolio__main.menu-open .right::before {
@@ -845,10 +908,6 @@ ul.project__text.stack {
   position: relative;
   z-index: 10;
 }
-.portfolio__main .left ul.skill__list,
-.portfolio__main .right ul.skill__list {
-  padding-bottom: 2rem;
-}
 .portfolio__main .left ul.project__text.stack,
 .portfolio__main .right ul.project__text.stack {
   overflow: scroll;
@@ -869,7 +928,6 @@ ul.project__text.stack {
 .portfolio__main .left li,
 .portfolio__main .right li {
   margin-bottom: 1.5rem;
-  font-weight: 600;
 }
 @media (max-width: 750px) {
   .portfolio__main .left,
@@ -879,8 +937,9 @@ ul.project__text.stack {
 }
 
 .splash-loader__dark, .splash-loader__light {
-  height: 200vh;
-  width: 200vw;
+  will-change: transform;
+  height: 300vh;
+  width: 300vw;
 }
 .splash-loader__dark {
   position: absolute;
@@ -923,9 +982,10 @@ ul.project__text.stack {
   }
 }
 .splash-loader__main {
+  will-change: transform;
   position: fixed;
-  height: 200vh;
-  width: 200vw;
+  height: 300vh;
+  width: 300vw;
   top: 50%;
   left: 50%;
   display: flex;

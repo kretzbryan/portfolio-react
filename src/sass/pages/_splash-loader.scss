@@ -1,8 +1,9 @@
 .splash-loader {
 	&__dark,
 	&__light {
-		height: 200vh;
-		width: 200vw;
+		will-change: transform;
+		height: 300vh;
+		width: 300vw;
 	}
 
 	&__dark {
@@ -56,9 +57,10 @@
 	}
 
 	&__main {
+		will-change: transform;
 		position: fixed;
-		height: 200vh;
-		width: 200vw;
+		height: 300vh;
+		width: 300vw;
 		top: 50%;
 		left: 50%;
 		display: flex;

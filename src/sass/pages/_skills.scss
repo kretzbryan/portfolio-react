@@ -1,11 +1,12 @@
 h2.section__title {
-	font-size: 3.75rem;
-	text-align: center;
+	font-size: 2.2rem;
+	text-align: left;
+	font-weight: 500;
 	display: block;
 	margin-top: 8rem;
 	margin-bottom: 0;
 	word-wrap: break-word;
-	margin: 4rem auto 0;
+	margin: 2rem 0 0;
 	padding-top: 1rem;
 
 	@include respond(max540) {
@@ -22,10 +23,14 @@ h2.section__title {
 	border-radius: 5px;
 }
 
+.skill__description {
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
 .skill__card {
 	display: block;
-	width: 50%;
-	height: 100%;
+	padding: 0.5rem 2rem;
 }
 
 .skill__card h3 {
@@ -50,27 +55,54 @@ ul {
 }
 
 li {
-	font-size: 2rem;
+	font-size: 1.8rem;
+	font-weight: 500;
 	width: 100%;
+
+	& i {
+		font-size: 3.3rem;
+		color: initial;
+	}
 }
 
 .skill {
 	&__container {
 		height: 100%;
 		width: 100%;
-		@include respond(max750) {
-			justify-content: space-around;
-		}
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		flex-direction: column;
 		overflow: scroll;
+		// @include respond(max750) {
+		// 	justify-content: space-around;
+		// }
 	}
 
 	&__list {
 		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 1rem;
+		padding: 0 2rem;
+		justify-content: space-between;
 
 		& li {
+			width: 20rem;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+
+			&.skill__list-item {
+				font-size: 2rem;
+				font-weight: 500;
+			}
+			& i {
+				margin-right: 0.5rem;
+			}
+
+			@include respond(tab-land) {
+				width: 18rem;
+			}
 			@include respond(max540) {
 				font-size: 1.8rem;
 			}

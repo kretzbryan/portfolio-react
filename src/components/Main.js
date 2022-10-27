@@ -5,7 +5,7 @@ import SplashLoader from './SplashLoader';
 
 const Main = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
-	const [currentWindow, setCurrentWindow] = useState('about-me');
+	const [currentWindow, setCurrentWindow] = useState('');
 	const [showMain, setShowMain] = useState(false);
 
 	useEffect(() => {
@@ -24,6 +24,7 @@ const Main = () => {
 						menuOpen={menuOpen}
 						setMenuOpen={setMenuOpen}
 						setCurrentWindow={setCurrentWindow}
+						currentWindow={currentWindow}
 					/>
 				</>
 			) : null}

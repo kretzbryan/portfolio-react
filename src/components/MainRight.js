@@ -3,14 +3,35 @@ import ExternalLinkContainer from './ExternalLinkContainer';
 import frameMilk from '../images/noun-geometric-corner-deco-4922281-FEFEEB.svg';
 import frameCoffee from '../images/noun-geometric-corner-deco-4922281-4E3F30.svg';
 
-const MainRight = ({ menuOpen, setMenuOpen, setCurrentWindow }) => {
+const MainRight = ({
+	menuOpen,
+	setMenuOpen,
+	setCurrentWindow,
+	currentWindow,
+}) => {
+	const returnClassName = (string) => {
+		return `nav-link${currentWindow === string ? ' current-window' : ''}`;
+	};
+	const delaySetCurrent = (string) => {
+		setCurrentWindow('');
+		setTimeout(() => {
+			setCurrentWindow(string);
+		}, 200);
+	};
 	return (
 		<div className={`right${menuOpen ? ' menu-open' : ''}`}>
 			<header>
 				<h2>
 					<button
 						className={menuOpen ? 'close' : 'open'}
-						onClick={() => setMenuOpen(!menuOpen)}>
+						onClick={() => {
+							if (menuOpen === true) {
+								setCurrentWindow('');
+							} else {
+								setCurrentWindow('about-me');
+							}
+							setMenuOpen(!menuOpen);
+						}}>
 						bk.dev <span>+</span>
 					</button>
 				</h2>
@@ -53,8 +74,8 @@ const MainRight = ({ menuOpen, setMenuOpen, setCurrentWindow }) => {
 				<ul className='porfolio__main-menu'>
 					<li>
 						<button
-							onClick={() => setCurrentWindow('about-me')}
-							className='nav-link'
+							onClick={() => delaySetCurrent('about-me')}
+							className={returnClassName('about-me')}
 							href='/about'>
 							About me
 						</button>
@@ -62,8 +83,8 @@ const MainRight = ({ menuOpen, setMenuOpen, setCurrentWindow }) => {
 					<li>
 						{' '}
 						<button
-							onClick={() => setCurrentWindow('projects')}
-							className='nav-link'
+							onClick={() => delaySetCurrent('projects')}
+							className={returnClassName('projects')}
 							href='/projects'>
 							Projects
 						</button>
@@ -71,9 +92,9 @@ const MainRight = ({ menuOpen, setMenuOpen, setCurrentWindow }) => {
 					<li>
 						{' '}
 						<button
-							onClick={() => setCurrentWindow('expertise')}
+							onClick={() => delaySetCurrent('expertise')}
 							href='/skills'
-							className='nav-link'>
+							className={returnClassName('expertise')}>
 							Expertise
 						</button>
 					</li>
