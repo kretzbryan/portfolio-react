@@ -76,6 +76,7 @@ li {
 		justify-content: flex-start;
 		flex-direction: column;
 		overflow: scroll;
+		padding-bottom: 67.5px;
 
 		@include respond(max750) {
 			width: calc(100% - 42px);

@@ -256,7 +256,7 @@ a.nav-link {
   display: block;
   margin: 0 auto;
   position: relative;
-  bottom: 1.5rem;
+  bottom: 0.5rem;
   width: 0;
   border-bottom: 1px solid #e4e3e3;
   transition: all 0.3s;
@@ -507,6 +507,7 @@ li i {
   justify-content: flex-start;
   flex-direction: column;
   overflow: scroll;
+  padding-bottom: 67.5px;
 }
 @media (max-width: 750px) {
   .skill__container {
