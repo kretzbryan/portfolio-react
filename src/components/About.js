@@ -91,7 +91,7 @@ const About = () => {
 			// }
 			setLines(calculatedGroups);
 		};
-
+		updateStrings();
 		scrollY.onChange((latest) => setScrollProgress(latest));
 
 		window.addEventListener('resize', updateStrings);
