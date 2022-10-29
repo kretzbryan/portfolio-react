@@ -36,16 +36,12 @@
 
 p.about__text {
 	padding-bottom: 4.5rem;
-
-	@include respond(max750) {
-		color: transparent !important;
-		animation: none !important;
-	}
 }
 
 .about {
 	&__container {
 		padding: 0 1rem;
+		width: 100%;
 		// background-image: linear-gradient(
 		// 	transparent 49%,
 		// 	#4e3f30 58%,
@@ -60,21 +56,7 @@ p.about__text {
 		// padding-top: 67.5px;
 
 		@include respond(max750) {
-			background: linear-gradient(
-					transparent 49%,
-					#4e3f30 58%,
-					#4e3f30 89%,
-					transparent 100%
-				)
-				no-repeat center center fixed;
-			background-clip: text;
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-			-webkit-background-clip: text;
-			-webkit-box-decoration-break: clone;
-
+			width: 100%;
 			color: transparent;
 
 			padding-top: 67.5px;
@@ -121,9 +103,17 @@ p.about__text {
 		// text-align: end;
 		font-size: 1.7rem;
 		margin-top: 6rem;
+		&-line {
+			margin-right: 4px;
+		}
 
 		@include respond(max400) {
 			margin-top: 2rem;
+
+			&-line {
+				width: 100%;
+				display: block;
+			}
 		}
 	}
 

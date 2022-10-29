@@ -342,26 +342,14 @@ a.nav-link {
 p.about__text {
   padding-bottom: 4.5rem;
 }
-@media (max-width: 750px) {
-  p.about__text {
-    color: transparent !important;
-    animation: none !important;
-  }
-}
 
 .about__container {
   padding: 0 1rem;
+  width: 100%;
 }
 @media (max-width: 750px) {
   .about__container {
-    background: linear-gradient(transparent 49%, #4e3f30 58%, #4e3f30 89%, transparent 100%) no-repeat center center fixed;
-    background-clip: text;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    -webkit-background-clip: text;
-    -webkit-box-decoration-break: clone;
+    width: 100%;
     color: transparent;
     padding-top: 67.5px;
   }
@@ -395,9 +383,16 @@ p.about__text {
   font-size: 1.7rem;
   margin-top: 6rem;
 }
+.about__text-line {
+  margin-right: 4px;
+}
 @media (max-width: 400px) {
   .about__text {
     margin-top: 2rem;
+  }
+  .about__text-line {
+    width: 100%;
+    display: block;
   }
 }
 .about__container .circle {
