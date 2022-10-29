@@ -34,42 +34,74 @@
 	}
 }
 
+p.about__text {
+	padding-bottom: 4.5rem;
+
+	@include respond(max750) {
+		color: transparent !important;
+		animation: none !important;
+	}
+}
+
 .about {
 	&__container {
-		color: transparent;
-		margin-top: 4rem;
+		padding: 0 1rem;
+		// background-image: linear-gradient(
+		// 	transparent 49%,
+		// 	#4e3f30 58%,
+		// 	#4e3f30 89%,
+		// 	transparent 100%
+		// );
+		// background-clip: text;
+		// -webkit-background-clip: text;
+		// background-attachment: fixed;
+		// color: transparent;
+
+		// padding-top: 67.5px;
+
+		@include respond(max750) {
+			background-image: linear-gradient(
+				transparent 49%,
+				#4e3f30 58%,
+				#4e3f30 89%,
+				transparent 100%
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			background-attachment: fixed;
+			color: transparent;
+
+			padding-top: 67.5px;
+		}
+
 		@include respond(max400) {
 			margin-top: 2rem;
 		}
 	}
 	&__wrapper {
-		height: 100%;
-		// color: $color-coffee-bean;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-		font-size: 1.4rem;
-		padding: 67.5px 2rem;
+		padding-top: 67.5px;
 		overflow-y: scroll;
-		background-image: linear-gradient(
-			transparent 48%,
-			currentColor 53%,
-			currentColor 95%,
-			transparent 100%
-		);
-		background-clip: text;
-		-webkit-background-clip: text;
-		background-attachment: fixed;
-		color: transparent;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		// background-image: linear-gradient(
+		// 	transparent 48%,
+		// 	currentColor 53%,
+		// 	currentColor 95%,
+		// 	transparent 100%
+		// );
+		// background-clip: text;
+		// -webkit-background-clip: text;
+		// background-attachment: fixed;
 
 		@include respond(max750) {
 			padding-left: 0;
+			padding-top: 25px;
 			width: calc(100% - 42px);
 			position: relative;
 			justify-content: flex-start;
-			padding-top: 0;
-			margin-top: 8rem;
+			align-items: flex-start;
+			// height: initial;
 			left: 42px;
 		}
 		// @include respond(max412) {

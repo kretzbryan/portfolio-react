@@ -41,6 +41,9 @@
 	}
 
 	& section {
+		&.about__container {
+			margin-top: 0;
+		}
 		margin-top: 67.5px;
 		position: relative;
 	}

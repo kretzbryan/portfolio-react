@@ -314,6 +314,10 @@ a.nav-link {
   line-height: 1.3;
 }
 
+.scroll {
+  overflow-y: scroll;
+}
+
 .headshot {
   border-radius: 100%;
   height: 20rem;
@@ -335,9 +339,28 @@ a.nav-link {
   }
 }
 
+p.about__text {
+  padding-bottom: 4.5rem;
+}
+@media (max-width: 750px) {
+  p.about__text {
+    color: transparent !important;
+    animation: none !important;
+  }
+}
+
 .about__container {
-  color: transparent;
-  margin-top: 4rem;
+  padding: 0 1rem;
+}
+@media (max-width: 750px) {
+  .about__container {
+    background-image: linear-gradient(transparent 49%, #4e3f30 58%, #4e3f30 89%, transparent 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-attachment: fixed;
+    color: transparent;
+    padding-top: 67.5px;
+  }
 }
 @media (max-width: 400px) {
   .about__container {
@@ -345,28 +368,20 @@ a.nav-link {
   }
 }
 .about__wrapper {
+  padding-top: 67.5px;
+  overflow-y: scroll;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 1.4rem;
-  padding: 67.5px 2rem;
-  overflow-y: scroll;
-  background-image: linear-gradient(transparent 48%, currentColor 53%, currentColor 95%, transparent 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-attachment: fixed;
-  color: transparent;
+  align-items: center;
 }
 @media (max-width: 750px) {
   .about__wrapper {
     padding-left: 0;
+    padding-top: 25px;
     width: calc(100% - 42px);
     position: relative;
     justify-content: flex-start;
-    padding-top: 0;
-    margin-top: 8rem;
+    align-items: flex-start;
     left: 42px;
   }
 }
@@ -743,6 +758,9 @@ ul.project__text-stack {
 .portfolio__main .left section {
   margin-top: 67.5px;
   position: relative;
+}
+.portfolio__main .left section.about__container {
+  margin-top: 0;
 }
 .portfolio__main .left::before {
   content: "";
