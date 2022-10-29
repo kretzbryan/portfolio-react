@@ -358,6 +358,7 @@ p.about__text {
     background-clip: text;
     -webkit-background-clip: text;
     background-attachment: fixed;
+    -webkit-box-decoration-break: clone;
     color: transparent;
     padding-top: 67.5px;
   }
