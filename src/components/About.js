@@ -113,12 +113,12 @@ const About = () => {
 					<p className='about__text'>
 						{lines
 							? lines.map((line, index) => {
-									const bottom = 24 * (index + 1) + 280;
+									const bottom = 20 * (index + 1) + 230;
 									return (
 										<motion.span
 											key={uuid()}
 											style={{
-												opacity: (bottom - scrollProgress) / scrollProgress,
+												opacity: (bottom - scrollProgress) / 0.25 / 230,
 											}}
 											className='about__text-line'>
 											{line}

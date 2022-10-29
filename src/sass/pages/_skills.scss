@@ -32,7 +32,6 @@ h2.section__title {
 	display: block;
 	padding: 0.5rem 2rem;
 	@include respond(max750) {
-		padding-left: 1rem;
 	}
 }
 
