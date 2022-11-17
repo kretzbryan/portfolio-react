@@ -23,7 +23,7 @@ const MainRight = ({
 			<header>
 				<h2>
 					<button
-						className={menuOpen ? 'close' : 'open'}
+						// className={menuOpen ? 'close' : 'open'}
 						onClick={() => {
 							if (menuOpen === true) {
 								setCurrentWindow('');
@@ -32,7 +32,8 @@ const MainRight = ({
 							}
 							setMenuOpen(!menuOpen);
 						}}>
-						bk.dev <span>+</span>
+						bk.dev{' '}
+						<span className={`sandwich${menuOpen ? ' close' : ''}`}></span>
 					</button>
 				</h2>
 				{/* <img src={menuOpen ? frameCoffee : frameMilk} alt='' />

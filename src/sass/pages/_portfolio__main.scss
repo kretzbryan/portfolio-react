@@ -152,7 +152,7 @@
 				margin: 0;
 				& span {
 					display: inline-block;
-					animation: toClose 0.5s forwards;
+					// animation: toClose 0.5s forwards;
 					will-change: transform;
 					// transform: rotate(0deg);
 				}
@@ -315,7 +315,7 @@
 
 			cursor: pointer;
 			& span {
-				animation: toOpen 0.5s forwards;
+				// animation: toOpen 0.5s forwards;
 				will-change: transform;
 				// transform: rotate(45deg);
 			}

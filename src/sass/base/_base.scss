@@ -189,3 +189,50 @@ a.nav-link {
 .scroll {
 	overflow-y: scroll;
 }
+
+.sandwich {
+	position: relative;
+	margin-bottom: 0.75rem;
+
+	@include respond(max750) {
+		transform: rotate(90deg);
+	}
+
+	&,
+	&::before,
+	&::after {
+		width: 2.25rem;
+		height: 3px;
+		background-color: $color-coffee-bean;
+		display: inline-block;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+	}
+
+	&::before {
+		top: calc(-0.75rem - 1px);
+	}
+	&::after {
+		bottom: -0.75rem;
+	}
+
+	&.close {
+		background-color: transparent;
+
+		&::before {
+			background-color: $color-milk;
+			transform: rotate(45deg);
+			top: 0;
+		}
+		&::after {
+			background-color: $color-milk;
+			transform: rotate(-45deg);
+			bottom: 0;
+		}
+	}
+}
